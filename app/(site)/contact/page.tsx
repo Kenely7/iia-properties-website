@@ -1,4 +1,4 @@
-import { MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import Section, { SectionHeading } from "@/components/Section";
 import FadeIn from "@/components/FadeIn";
 import InquiryForm from "@/components/InquiryForm";
@@ -8,9 +8,9 @@ export const metadata = {
 };
 
 const office = {
-  address:
-    "3rd Floor, Right Wing, Enterprise Building (Former ACB Building), #9 Ogui Road, Enugu, Nigeria",
-  phone: "0811 545 3020",
+  address: "Suite 2N Purity Plaza, Abakaliki Road, GRA Enugu, Nigeria",
+  phones: ["0811 545 3020", "0803 550 2100"],
+  email: "iwuba.ifediora@gmail.com",
 };
 
 export default function ContactPage() {
@@ -27,9 +27,15 @@ export default function ContactPage() {
           <div className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-100">
             <h3 className="font-heading font-bold text-slate-900">Get in Touch</h3>
             <ul className="mt-4 space-y-4 text-sm text-slate-600">
+              {office.phones.map((phone) => (
+                <li key={phone} className="flex items-center gap-3">
+                  <Phone className="h-5 w-5 text-brand-blue" />
+                  {phone}
+                </li>
+              ))}
               <li className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-brand-blue" />
-                {office.phone}
+                <Mail className="h-5 w-5 text-brand-blue" />
+                {office.email}
               </li>
             </ul>
           </div>
@@ -40,7 +46,7 @@ export default function ContactPage() {
               Head Office — Enugu, Nigeria
             </h4>
             <p className="mt-2 text-sm text-slate-600">{office.address}</p>
-            <p className="mt-1 text-sm text-slate-600">{office.phone}</p>
+            <p className="mt-1 text-sm text-slate-600">{office.phones.join(" / ")}</p>
           </div>
 
           <div className="flex h-56 flex-col items-center justify-center gap-2 rounded-2xl bg-brand-gray text-slate-400">

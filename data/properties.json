@@ -4,7 +4,7 @@
     "title": "Modern Hillside Villa",
     "description": "A stunning modern villa perched on the hillside offering panoramic views, an open-concept living area, floor-to-ceiling windows, and a resort-style pool. Perfect for those who want luxury living with breathtaking scenery every day.",
     "status": "for-sale",
-    "price": 1250000,
+    "price": 2000000000,
     "address": "482 Ridgeview Drive",
     "city": "Austin",
     "state": "TX",
@@ -31,7 +31,7 @@
     "agent": {
       "name": "Sarah Mitchell",
       "phone": "(512) 555-0142",
-      "email": "sarah.mitchell@iiarealty.com",
+      "email": "sarah.mitchell@iiaproperties.com",
       "photo": "https://i.pravatar.cc/300?img=32"
     },
     "featured": true,
@@ -42,7 +42,7 @@
     "title": "Downtown Loft with Skyline Views",
     "description": "Industrial-chic loft in the heart of downtown featuring exposed brick, soaring ceilings, and floor-to-ceiling windows with skyline views. Walkable to restaurants, transit, and nightlife.",
     "status": "for-rent",
-    "price": 2800,
+    "price": 4500000,
     "address": "1210 Main Street, Unit 14B",
     "city": "Austin",
     "state": "TX",
@@ -69,7 +69,7 @@
     "agent": {
       "name": "James Carter",
       "phone": "(512) 555-0198",
-      "email": "james.carter@iiarealty.com",
+      "email": "james.carter@iiaproperties.com",
       "photo": "https://i.pravatar.cc/300?img=12"
     },
     "featured": true,
@@ -80,7 +80,7 @@
     "title": "Charming Craftsman Bungalow",
     "description": "A beautifully restored craftsman bungalow featuring original hardwood floors, a wraparound porch, and a lush landscaped garden. Move-in ready with modern updates while preserving historic character.",
     "status": "for-sale",
-    "price": 549000,
+    "price": 880000000,
     "address": "77 Maple Grove Lane",
     "city": "Portland",
     "state": "OR",
@@ -106,7 +106,7 @@
     "agent": {
       "name": "Emily Davis",
       "phone": "(503) 555-0176",
-      "email": "emily.davis@iiarealty.com",
+      "email": "emily.davis@iiaproperties.com",
       "photo": "https://i.pravatar.cc/300?img=47"
     },
     "featured": true,
@@ -117,7 +117,7 @@
     "title": "Lakeside Family Retreat",
     "description": "Spacious family home just steps from the lake, offering a private dock, expansive backyard, and an open floor plan ideal for entertaining. A rare opportunity for waterfront living.",
     "status": "for-sale",
-    "price": 875000,
+    "price": 1400000000,
     "address": "9 Lakeshore Court",
     "city": "Minneapolis",
     "state": "MN",
@@ -143,7 +143,7 @@
     "agent": {
       "name": "Michael Nguyen",
       "phone": "(612) 555-0134",
-      "email": "michael.nguyen@iiarealty.com",
+      "email": "michael.nguyen@iiaproperties.com",
       "photo": "https://i.pravatar.cc/300?img=15"
     },
     "featured": false,
@@ -154,7 +154,7 @@
     "title": "Cozy Studio Near University",
     "description": "Bright and efficient studio apartment within walking distance of campus and shops. Freshly painted with new flooring, perfect for students or young professionals.",
     "status": "for-rent",
-    "price": 1150,
+    "price": 1800000,
     "address": "245 College Ave, Unit 3",
     "city": "Boston",
     "state": "MA",
@@ -179,7 +179,7 @@
     "agent": {
       "name": "Sarah Mitchell",
       "phone": "(512) 555-0142",
-      "email": "sarah.mitchell@iiarealty.com",
+      "email": "sarah.mitchell@iiaproperties.com",
       "photo": "https://i.pravatar.cc/300?img=32"
     },
     "featured": false,
@@ -190,7 +190,7 @@
     "title": "Luxury Penthouse Suite",
     "description": "Top-floor penthouse boasting 360-degree city views, a private terrace, chef's kitchen, and premium finishes throughout. The pinnacle of urban luxury living.",
     "status": "for-rent",
-    "price": 6500,
+    "price": 10400000,
     "address": "500 Park Tower, Penthouse 1",
     "city": "Chicago",
     "state": "IL",
@@ -217,7 +217,7 @@
     "agent": {
       "name": "James Carter",
       "phone": "(512) 555-0198",
-      "email": "james.carter@iiarealty.com",
+      "email": "james.carter@iiaproperties.com",
       "photo": "https://i.pravatar.cc/300?img=12"
     },
     "featured": true,
@@ -228,7 +228,7 @@
     "title": "Suburban Family Home with Pool",
     "description": "Well-maintained single-family home in a quiet cul-de-sac, featuring a fenced backyard with pool, updated kitchen, and an excellent school district nearby.",
     "status": "for-sale",
-    "price": 615000,
+    "price": 985000000,
     "address": "34 Willowbrook Circle",
     "city": "Denver",
     "state": "CO",
@@ -254,7 +254,7 @@
     "agent": {
       "name": "Emily Davis",
       "phone": "(503) 555-0176",
-      "email": "emily.davis@iiarealty.com",
+      "email": "emily.davis@iiaproperties.com",
       "photo": "https://i.pravatar.cc/300?img=47"
     },
     "featured": false,
@@ -265,7 +265,7 @@
     "title": "Modern Townhome in Arts District",
     "description": "Sleek three-story townhome in the vibrant Arts District featuring a rooftop deck, attached garage, and designer finishes. Steps from galleries, cafes, and studios.",
     "status": "for-rent",
-    "price": 3200,
+    "price": 5100000,
     "address": "88 Gallery Row",
     "city": "Los Angeles",
     "state": "CA",
@@ -291,7 +291,7 @@
     "agent": {
       "name": "Michael Nguyen",
       "phone": "(612) 555-0134",
-      "email": "michael.nguyen@iiarealty.com",
+      "email": "michael.nguyen@iiaproperties.com",
       "photo": "https://i.pravatar.cc/300?img=15"
     },
     "featured": false,
@@ -302,7 +302,7 @@
     "title": "Elegant Colonial Estate",
     "description": "Timeless colonial estate set on a manicured lot, featuring formal living and dining rooms, a grand foyer, and a chef's kitchen. A perfect blend of classic elegance and modern comfort.",
     "status": "for-sale",
-    "price": 1495000,
+    "price": 2390000000,
     "address": "12 Heritage Way",
     "city": "Greenwich",
     "state": "CT",
@@ -329,7 +329,7 @@
     "agent": {
       "name": "Sarah Mitchell",
       "phone": "(512) 555-0142",
-      "email": "sarah.mitchell@iiarealty.com",
+      "email": "sarah.mitchell@iiaproperties.com",
       "photo": "https://i.pravatar.cc/300?img=32"
     },
     "featured": true,
@@ -340,7 +340,7 @@
     "title": "Bright 2-Bedroom Garden Apartment",
     "description": "Ground-floor apartment with direct access to a private garden patio. Recently renovated with new appliances, quartz countertops, and ample storage.",
     "status": "for-rent",
-    "price": 1950,
+    "price": 3100000,
     "address": "60 Fernwood Terrace, Unit 1",
     "city": "Seattle",
     "state": "WA",
@@ -366,7 +366,7 @@
     "agent": {
       "name": "James Carter",
       "phone": "(512) 555-0198",
-      "email": "james.carter@iiarealty.com",
+      "email": "james.carter@iiaproperties.com",
       "photo": "https://i.pravatar.cc/300?img=12"
     },
     "featured": false,

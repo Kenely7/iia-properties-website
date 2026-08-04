@@ -18,9 +18,9 @@ const propertyTypes = [
 
 const priceRanges = [
   { label: "Any Price", value: "" },
-  { label: "Under $500,000 / $1,500 mo", value: "0-500000" },
-  { label: "$500,000 - $1,000,000 / $1,500 - $3,000 mo", value: "500000-1000000" },
-  { label: "$1,000,000+ / $3,000+ mo", value: "1000000-999999999" },
+  { label: "Under ₦800M / ₦2.5M mo", value: "0-800000000" },
+  { label: "₦800M - ₦1.5B / ₦2.5M - ₦5M mo", value: "800000000-1500000000" },
+  { label: "₦1.5B+ / ₦5M+ mo", value: "1500000000-999999999999" },
 ];
 
 export default function SearchBar({ className }: { className?: string }) {

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import type { SVGProps } from "react";
 
 function FacebookIcon(props: SVGProps<SVGSVGElement>) {
@@ -115,12 +115,15 @@ export default function Footer() {
             <ul className="mt-4 space-y-3 text-sm text-slate-400">
               <li className="flex items-start gap-2">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand-blue-light" />
-                3rd Floor, Right Wing, Enterprise Building (Former ACB
-                Building), #9 Ogui Road, Enugu, Nigeria
+                Suite 2N Purity Plaza, Abakaliki Road, GRA Enugu, Nigeria
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 shrink-0 text-brand-blue-light" />
-                0811 545 3020
+                0811 545 3020 / 0803 550 2100
+              </li>
+              <li className="flex items-center gap-2">
+                <Mail className="h-4 w-4 shrink-0 text-brand-blue-light" />
+                iwuba.ifediora@gmail.com
               </li>
             </ul>
 

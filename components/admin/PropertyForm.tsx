@@ -171,14 +171,14 @@ export default function PropertyForm({ initialData }: PropertyFormProps) {
 
         <div>
           <label className={labelClass}>
-            Price {form.status === "for-rent" && "(per month)"}
+            Price (₦) {form.status === "for-rent" && "(per month)"}
           </label>
           <input
             type="number"
             className={inputClass}
             value={form.price}
             onChange={(e) => update("price", e.target.value)}
-            placeholder="500000"
+            placeholder="850000000"
           />
         </div>
 
