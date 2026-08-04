@@ -10,12 +10,13 @@ type StatusFilter = PropertyStatus | "all";
 type SortOption = "newest" | "price-asc" | "price-desc";
 
 const propertyTypes = [
-  "House",
-  "Apartment",
-  "Villa",
-  "Townhouse",
+  "Duplex",
+  "Bungalow",
+  "Terrace",
+  "Semi-Detached",
+  "Flat",
+  "Self-Contain",
   "Penthouse",
-  "Condo",
   "Land",
   "Commercial",
 ];
@@ -144,7 +145,7 @@ export default function PropertiesExplorer({
                 setLocation(e.target.value);
                 setVisibleCount(PAGE_SIZE);
               }}
-              placeholder="City, state, or zip"
+              placeholder="Area, city, or zip"
               className="mt-3 w-full rounded-lg border border-slate-200 px-3 py-2 text-sm outline-none focus:border-brand-blue"
             />
           </div>
@@ -339,7 +340,7 @@ function ListRow({ property }: { property: Property }) {
         <div className="mt-3 flex gap-4 text-sm text-slate-600">
           <span>{property.beds} Beds</span>
           <span>{property.baths} Baths</span>
-          <span>{property.sqft.toLocaleString()} sqft</span>
+          <span>{property.sqft.toLocaleString()} sqm</span>
         </div>
       </div>
     </a>

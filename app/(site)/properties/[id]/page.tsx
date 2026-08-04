@@ -32,7 +32,7 @@ export default async function PropertyDetailPage({
   const keyDetails = [
     { icon: BedDouble, label: "Bedrooms", value: property.beds },
     { icon: Bath, label: "Bathrooms", value: property.baths },
-    { icon: Ruler, label: "Square Feet", value: property.sqft.toLocaleString() },
+    { icon: Ruler, label: "Square Meters", value: property.sqft.toLocaleString() },
     { icon: Trees, label: "Lot Size", value: property.lotSize },
     { icon: Calendar, label: "Year Built", value: property.yearBuilt },
   ];

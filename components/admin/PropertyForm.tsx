@@ -5,12 +5,13 @@ import { useState } from "react";
 import type { NewProperty, Property, PropertyStatus } from "@/lib/types";
 
 const propertyTypes = [
-  "House",
-  "Apartment",
-  "Villa",
-  "Townhouse",
+  "Duplex",
+  "Bungalow",
+  "Terrace",
+  "Semi-Detached",
+  "Flat",
+  "Self-Contain",
   "Penthouse",
-  "Condo",
   "Land",
   "Commercial",
 ];
@@ -142,7 +143,7 @@ export default function PropertyForm({ initialData }: PropertyFormProps) {
             className={inputClass}
             value={form.title}
             onChange={(e) => update("title", e.target.value)}
-            placeholder="Modern Hillside Villa"
+            placeholder="Luxury Modern Duplex in GRA Enugu"
           />
         </div>
 
@@ -220,7 +221,7 @@ export default function PropertyForm({ initialData }: PropertyFormProps) {
               className={inputClass}
               value={form.address}
               onChange={(e) => update("address", e.target.value)}
-              placeholder="482 Ridgeview Drive"
+              placeholder="7 Presidential Road, GRA"
             />
           </div>
           <div>
@@ -229,6 +230,7 @@ export default function PropertyForm({ initialData }: PropertyFormProps) {
               className={inputClass}
               value={form.city}
               onChange={(e) => update("city", e.target.value)}
+              placeholder="Enugu"
             />
           </div>
           <div>
@@ -237,6 +239,7 @@ export default function PropertyForm({ initialData }: PropertyFormProps) {
               className={inputClass}
               value={form.state}
               onChange={(e) => update("state", e.target.value)}
+              placeholder="Enugu State"
             />
           </div>
           <div>
@@ -245,6 +248,7 @@ export default function PropertyForm({ initialData }: PropertyFormProps) {
               className={inputClass}
               value={form.zip}
               onChange={(e) => update("zip", e.target.value)}
+              placeholder="400001"
             />
           </div>
         </div>
@@ -272,7 +276,7 @@ export default function PropertyForm({ initialData }: PropertyFormProps) {
             />
           </div>
           <div>
-            <label className={labelClass}>Sqft</label>
+            <label className={labelClass}>Sqm</label>
             <input
               type="number"
               className={inputClass}
@@ -286,7 +290,7 @@ export default function PropertyForm({ initialData }: PropertyFormProps) {
               className={inputClass}
               value={form.lotSize}
               onChange={(e) => update("lotSize", e.target.value)}
-              placeholder="0.5 acres"
+              placeholder="1 Plot"
             />
           </div>
           <div>
@@ -306,7 +310,7 @@ export default function PropertyForm({ initialData }: PropertyFormProps) {
             className={inputClass}
             value={form.amenities}
             onChange={(e) => update("amenities", e.target.value)}
-            placeholder="Swimming Pool, Home Theater, Smart Home System"
+            placeholder="Swimming Pool, Boys' Quarters (BQ), Borehole, 24/7 Security"
           />
         </div>
 

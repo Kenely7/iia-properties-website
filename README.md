@@ -83,9 +83,9 @@ Property data lives in [data/properties.json](data/properties.json) and is read/
 
 ## Notes
 
+- Prices are formatted in Nigerian Naira (₦) via `Intl.NumberFormat('en-NG', { currency: 'NGN' })` in [lib/utils.ts](lib/utils.ts). Areas/sqft are shown as sqm, and lot sizes use Nigerian "plot" units.
 - Inquiry forms (property inquiry, services inquiry, contact form) are UI-only — they simulate a submission and show a success state, but don't send email or persist anywhere. Wire them up to an email service or the data layer as needed.
 - Map sections are static placeholders; swap in Google Maps/Mapbox embeds when ready.
-- The property catalog in `data/properties.json` is still placeholder demo data (fictional US listings/agents) — swap in real IIA listings when available.
+- The property catalog in `data/properties.json` is fictional placeholder listings relocated to real Enugu neighborhoods (GRA, Independence Layout, New Haven, Abakpa Nike, etc.) with Nigerian agent names/phone numbers — swap in the real IIA listings via the admin dashboard whenever they're ready.
 - Testimonials on the Home page are generic placeholder quotes (no fabricated client names) — replace with real client testimonials when available.
 - The About page intentionally omits a "meet the team" section since no real staff bios/photos were available — add one if you'd like to feature real team members.
-- No public company email address was found on the source site, so contact points are limited to phone + office address; add one if you have it.

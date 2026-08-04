@@ -7,13 +7,15 @@ import { cn } from "@/lib/utils";
 
 const propertyTypes = [
   "Any Type",
-  "House",
-  "Apartment",
-  "Villa",
-  "Townhouse",
+  "Duplex",
+  "Bungalow",
+  "Terrace",
+  "Semi-Detached",
+  "Flat",
+  "Self-Contain",
   "Penthouse",
-  "Condo",
   "Land",
+  "Commercial",
 ];
 
 const priceRanges = [
@@ -69,7 +71,7 @@ export default function SearchBar({ className }: { className?: string }) {
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
         <input
           type="text"
-          placeholder="Location (city, zip...)"
+          placeholder="Area (e.g. GRA, Independence Layout...)"
           value={location}
           onChange={(e) => setLocation(e.target.value)}
           className="rounded-lg border border-slate-200 px-4 py-3 text-sm text-slate-700 outline-none focus:border-brand-blue"

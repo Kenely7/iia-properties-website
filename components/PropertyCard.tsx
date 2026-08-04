@@ -63,7 +63,7 @@ export default function PropertyCard({
             </span>
             <span className="flex items-center gap-1.5">
               <Ruler className="h-4 w-4 text-brand-blue" />
-              {property.sqft.toLocaleString()} sqft
+              {property.sqft.toLocaleString()} sqm
             </span>
           </div>
 
