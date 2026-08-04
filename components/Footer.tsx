@@ -144,8 +144,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 border-t border-slate-800 pt-6 text-center text-sm text-slate-500">
-          © 2012–{new Date().getFullYear()} Iwuba Ifediora &amp; Associates
-          (IIA Properties). All rights reserved.
+          {`© ${new Date().getFullYear()} Iwuba Ifediora & Associates (IIA Properties). All rights reserved.`}
         </div>
       </div>
     </footer>
