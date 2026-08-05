@@ -1,7 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
-import { ADMIN_SESSION_COOKIE, ADMIN_SESSION_VALUE } from "@/lib/auth";
 
-export function proxy(request: NextRequest) {
+// Kept in sync with lib/auth.ts by hand — inlined (rather than imported)
+// because Vercel's Edge Function bundler fails to resolve the "@/" path
+// alias from middleware.ts.
+const ADMIN_SESSION_COOKIE = "iia_admin_session";
+const ADMIN_SESSION_VALUE = "authenticated";
+
+export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   if (pathname === "/admin/login") {
