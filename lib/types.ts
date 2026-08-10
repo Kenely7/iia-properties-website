@@ -16,13 +16,9 @@ export interface Property {
   address: string;
   city: string;
   state: string;
-  zip: string;
   propertyType: string;
   beds: number;
   baths: number;
-  sqft: number;
-  lotSize: string;
-  yearBuilt: number;
   amenities: string[];
   images: string[];
   agent: Agent;

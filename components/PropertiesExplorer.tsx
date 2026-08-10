@@ -58,7 +58,7 @@ export default function PropertiesExplorer({
       if (status !== "all" && p.status !== status) return false;
       if (
         location &&
-        !`${p.city} ${p.state} ${p.zip} ${p.address}`
+        !`${p.city} ${p.state} ${p.address}`
           .toLowerCase()
           .includes(location.toLowerCase())
       )
@@ -340,7 +340,6 @@ function ListRow({ property }: { property: Property }) {
         <div className="mt-3 flex gap-4 text-sm text-slate-600">
           <span>{property.beds} Beds</span>
           <span>{property.baths} Baths</span>
-          <span>{property.sqft.toLocaleString()} sqm</span>
         </div>
       </div>
     </a>

@@ -1,17 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import {
-  Bath,
-  BedDouble,
-  Calendar,
-  CheckCircle2,
-  Mail,
-  MapPin,
-  Phone,
-  Ruler,
-  Trees,
-} from "lucide-react";
+import { Bath, BedDouble, CheckCircle2, Mail, MapPin, Phone } from "lucide-react";
 import Section from "@/components/Section";
 import StatusBadge from "@/components/StatusBadge";
 import ImageGallery from "@/components/ImageGallery";
@@ -32,9 +22,6 @@ export default async function PropertyDetailPage({
   const keyDetails = [
     { icon: BedDouble, label: "Bedrooms", value: property.beds },
     { icon: Bath, label: "Bathrooms", value: property.baths },
-    { icon: Ruler, label: "Square Meters", value: property.sqft.toLocaleString() },
-    { icon: Trees, label: "Lot Size", value: property.lotSize },
-    { icon: Calendar, label: "Year Built", value: property.yearBuilt },
   ];
 
   return (
@@ -60,14 +47,14 @@ export default async function PropertyDetailPage({
             </h1>
             <p className="mt-2 flex items-center gap-1.5 text-slate-500">
               <MapPin className="h-4 w-4" />
-              {property.address}, {property.city}, {property.state} {property.zip}
+              {property.address}, {property.city}, {property.state}
             </p>
             <p className="mt-4 font-heading text-3xl font-bold text-brand-blue">
               {formatPrice(property.price, property.status)}
             </p>
           </div>
 
-          <div className="mt-8 grid grid-cols-2 gap-4 rounded-2xl bg-brand-gray p-6 sm:grid-cols-5">
+          <div className="mt-8 grid max-w-xs grid-cols-2 gap-4 rounded-2xl bg-brand-gray p-6">
             {keyDetails.map((detail) => (
               <div key={detail.label} className="text-center">
                 <detail.icon className="mx-auto h-5 w-5 text-brand-blue" />

@@ -29,13 +29,9 @@ function toFormState(data?: Property) {
     address: data?.address ?? "",
     city: data?.city ?? "",
     state: data?.state ?? "",
-    zip: data?.zip ?? "",
     propertyType: data?.propertyType ?? propertyTypes[0],
     beds: data?.beds?.toString() ?? "",
     baths: data?.baths?.toString() ?? "",
-    sqft: data?.sqft?.toString() ?? "",
-    lotSize: data?.lotSize ?? "",
-    yearBuilt: data?.yearBuilt?.toString() ?? "",
     amenities: data?.amenities?.join(", ") ?? "",
     images: data?.images?.join("\n") ?? "",
     agentName: data?.agent?.name ?? "",
@@ -74,13 +70,9 @@ export default function PropertyForm({ initialData }: PropertyFormProps) {
       address: form.address,
       city: form.city,
       state: form.state,
-      zip: form.zip,
       propertyType: form.propertyType,
       beds: Number(form.beds) || 0,
       baths: Number(form.baths) || 0,
-      sqft: Number(form.sqft) || 0,
-      lotSize: form.lotSize || "N/A",
-      yearBuilt: Number(form.yearBuilt) || new Date().getFullYear(),
       amenities: form.amenities
         .split(",")
         .map((a) => a.trim())
@@ -214,8 +206,8 @@ export default function PropertyForm({ initialData }: PropertyFormProps) {
 
       <section className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-100">
         <h3 className="mb-4 font-heading font-bold text-slate-900">Location</h3>
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="sm:col-span-2 lg:col-span-1">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
+          <div>
             <label className={labelClass}>Address</label>
             <input
               className={inputClass}
@@ -242,21 +234,12 @@ export default function PropertyForm({ initialData }: PropertyFormProps) {
               placeholder="Enugu State"
             />
           </div>
-          <div>
-            <label className={labelClass}>Zip</label>
-            <input
-              className={inputClass}
-              value={form.zip}
-              onChange={(e) => update("zip", e.target.value)}
-              placeholder="400001"
-            />
-          </div>
         </div>
       </section>
 
       <section className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-100">
         <h3 className="mb-4 font-heading font-bold text-slate-900">Details</h3>
-        <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-5">
+        <div className="grid grid-cols-2 gap-5">
           <div>
             <label className={labelClass}>Beds</label>
             <input
@@ -273,33 +256,6 @@ export default function PropertyForm({ initialData }: PropertyFormProps) {
               className={inputClass}
               value={form.baths}
               onChange={(e) => update("baths", e.target.value)}
-            />
-          </div>
-          <div>
-            <label className={labelClass}>Sqm</label>
-            <input
-              type="number"
-              className={inputClass}
-              value={form.sqft}
-              onChange={(e) => update("sqft", e.target.value)}
-            />
-          </div>
-          <div>
-            <label className={labelClass}>Lot Size</label>
-            <input
-              className={inputClass}
-              value={form.lotSize}
-              onChange={(e) => update("lotSize", e.target.value)}
-              placeholder="1 Plot"
-            />
-          </div>
-          <div>
-            <label className={labelClass}>Year Built</label>
-            <input
-              type="number"
-              className={inputClass}
-              value={form.yearBuilt}
-              onChange={(e) => update("yearBuilt", e.target.value)}
             />
           </div>
         </div>

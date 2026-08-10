@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Bath, BedDouble, MapPin, Ruler } from "lucide-react";
+import { Bath, BedDouble, MapPin } from "lucide-react";
 import StatusBadge from "./StatusBadge";
 import { formatPrice } from "@/lib/utils";
 import type { Property } from "@/lib/types";
@@ -60,10 +60,6 @@ export default function PropertyCard({
             <span className="flex items-center gap-1.5">
               <Bath className="h-4 w-4 text-brand-blue" />
               {property.baths} Baths
-            </span>
-            <span className="flex items-center gap-1.5">
-              <Ruler className="h-4 w-4 text-brand-blue" />
-              {property.sqft.toLocaleString()} sqm
             </span>
           </div>
 
