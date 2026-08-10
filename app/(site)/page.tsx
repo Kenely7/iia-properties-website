@@ -2,7 +2,10 @@ import {
   Award,
   Briefcase,
   Building2,
-  HandCoins,
+  FileCheck2,
+  Key,
+  Lightbulb,
+  Map,
   Scale,
   ShieldCheck,
   Smile,
@@ -19,27 +22,39 @@ import { getAllProperties } from "@/lib/properties.server";
 const services = [
   {
     icon: TrendingUp,
-    title: "Valuations",
+    title: "Property Valuation",
     description:
-      "Valuation for all purposes — business and finance, accounting, investment decisions, litigation, taxation, and insurance.",
+      "Independent valuations for mortgage, insurance, litigation, taxation and investment purposes, delivered to IVS and NIESV/ESVARBON professional standards.",
   },
   {
     icon: Building2,
-    title: "Property Management",
+    title: "Property & Estate Management",
     description:
-      "Professional management for residential and commercial properties, from rent collection to maintenance and reporting.",
+      "Full-service management of residential, commercial and mixed-use assets — tenancy administration, rent collection, maintenance oversight and reporting.",
   },
   {
-    icon: Briefcase,
-    title: "Property Development",
+    icon: Key,
+    title: "Letting & Agency",
     description:
-      "Advisory services grounded in market trends, guiding clients toward the highest and best use of their investment.",
+      "Sales and letting brokerage across Enugu State, connecting verified property with qualified buyers and tenants.",
   },
   {
-    icon: HandCoins,
-    title: "Business Development",
+    icon: Map,
+    title: "Land & Estate Development",
     description:
-      "Coordinating developers, promoters, brokers, financiers, and property owners for better real estate outcomes.",
+      "Feasibility studies, layout planning and advisory support for land development and estate schemes from acquisition to delivery.",
+  },
+  {
+    icon: FileCheck2,
+    title: "Professional Documentation",
+    description:
+      "Certificate of Occupancy processing, deed registration and title perfection support in line with the Land Use Act 1978 and Enugu State lands administration.",
+  },
+  {
+    icon: Lightbulb,
+    title: "Real Estate Advisory",
+    description:
+      "Strategic advice to institutions, banks, corporations and governments on property and investment decisions.",
   },
 ];
 
@@ -57,7 +72,7 @@ const yearsInBusiness = new Date().getFullYear() - FOUNDING_YEAR;
 const stats = [
   { label: "Established", value: `${FOUNDING_YEAR}` },
   { label: "Years in Business", value: `${yearsInBusiness}+` },
-  { label: "Core Service Areas", value: "4" },
+  { label: "Core Service Areas", value: "6" },
   { label: "Head Office", value: "Enugu, NG" },
 ];
 
@@ -80,6 +95,11 @@ export default async function HomePage() {
               find and secure the best real estate deals to meet your need.
               No need to sweat — let us help you today.
             </p>
+            <div className="mt-8 flex justify-center">
+              <Button href="/contact" variant="outline" size="lg">
+                Request a Valuation
+              </Button>
+            </div>
           </FadeIn>
 
           <FadeIn delay={0.15} className="mx-auto mt-10 max-w-4xl">
@@ -123,7 +143,7 @@ export default async function HomePage() {
           />
         </FadeIn>
 
-        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, i) => (
             <FadeIn key={service.title} delay={i * 0.08}>
               <div className="h-full rounded-xl bg-white p-6 shadow-sm ring-1 ring-slate-100 transition-shadow hover:shadow-lg">

@@ -4,10 +4,12 @@ import { useState } from "react";
 import { CheckCircle2 } from "lucide-react";
 
 const serviceOptions = [
-  "Valuation",
-  "Property Management",
-  "Property Development",
-  "Business Development",
+  "Property Valuation",
+  "Property & Estate Management",
+  "Letting & Agency",
+  "Land & Estate Development",
+  "Professional Documentation",
+  "Real Estate Advisory",
 ];
 
 export default function InquiryForm({

@@ -2,7 +2,10 @@ import {
   Award,
   Briefcase,
   Building2,
-  HandCoins,
+  FileCheck2,
+  Key,
+  Lightbulb,
+  Map,
   Scale,
   ShieldCheck,
   TrendingUp,
@@ -30,14 +33,26 @@ const stats = [
   { label: "Established", value: `${FOUNDING_YEAR}` },
   { label: "Years in Business", value: `${yearsInBusiness}+` },
   { label: "Head Office", value: "Enugu, NG" },
-  { label: "Core Service Areas", value: "4" },
+  { label: "Core Service Areas", value: "6" },
 ];
 
 const services = [
-  { icon: TrendingUp, title: "Valuations" },
-  { icon: Building2, title: "Property Management" },
-  { icon: Briefcase, title: "Property Development" },
-  { icon: HandCoins, title: "Business Development" },
+  { icon: TrendingUp, title: "Property Valuation" },
+  { icon: Building2, title: "Property & Estate Management" },
+  { icon: Key, title: "Letting & Agency" },
+  { icon: Map, title: "Land & Estate Development" },
+  { icon: FileCheck2, title: "Professional Documentation" },
+  { icon: Lightbulb, title: "Real Estate Advisory" },
+];
+
+const principles = [
+  "People before Profit.",
+  "Systems before Scale.",
+  "Trust before Transactions.",
+  "Quality before Quantity.",
+  "Innovation without compromising Professionalism.",
+  "Learning never stops.",
+  "Leave everything better than you found it.",
 ];
 
 export default function AboutPage() {
@@ -67,6 +82,12 @@ export default function AboutPage() {
             <h2 className="mt-3 font-heading text-3xl font-bold text-slate-900">
               Iwuba Ifediora & Associates
             </h2>
+            <p className="mt-4 text-lg font-medium text-slate-700">
+              Registered with NIESV and ESVARBON, IIA has built a reputation
+              on professional expertise, trusted relationships and
+              disciplined practice — across valuation, property management,
+              estate agency, land development and professional advisory.
+            </p>
             <p className="mt-4 text-slate-600">
               IWUBA IFEDIORA &amp; ASSOCIATES (IIA) is a registered firm of
               Estate Surveyors &amp; Valuers versed in arrays of
@@ -117,6 +138,26 @@ export default function AboutPage() {
               </p>
             </div>
           </FadeIn>
+        </div>
+      </Section>
+
+      {/* Guiding Principles */}
+      <Section>
+        <SectionHeading
+          eyebrow="Our Guiding Principles"
+          title="What Governs Every Decision"
+        />
+        <div className="mx-auto mt-12 max-w-2xl space-y-4">
+          {principles.map((principle, i) => (
+            <FadeIn key={principle} delay={i * 0.05}>
+              <div className="flex items-center gap-4 rounded-xl bg-brand-gray p-4">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-blue font-heading text-sm font-bold text-white">
+                  {i + 1}
+                </span>
+                <p className="font-medium text-slate-700">{principle}</p>
+              </div>
+            </FadeIn>
+          ))}
         </div>
       </Section>
 

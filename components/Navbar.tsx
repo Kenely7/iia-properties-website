@@ -19,6 +19,7 @@ const navLinks = [
   },
   { label: "Services", href: "/services" },
   { label: "About", href: "/about" },
+  { label: "2030 Project", href: "/2030-project" },
 ];
 
 export default function Navbar() {

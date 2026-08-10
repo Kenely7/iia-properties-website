@@ -1,8 +1,9 @@
 import {
-  Briefcase,
   Building2,
-  CheckCircle2,
-  HandCoins,
+  FileCheck2,
+  Key,
+  Lightbulb,
+  Map,
   TrendingUp,
 } from "lucide-react";
 import Section, { SectionHeading } from "@/components/Section";
@@ -16,54 +17,39 @@ export const metadata = {
 const services = [
   {
     icon: TrendingUp,
-    title: "Valuations",
-    tagline: "Valuation for all purposes",
+    title: "Property Valuation",
     description:
-      "Our valuation services cover the gamut of business and finance, accounting, investment decisions, litigation, taxation, and insurance.",
-    points: [
-      "Business & Finance — sale and purchase of property, mortgage, mergers and privatization, sale-leaseback",
-      "Accounting — balance sheets, liquidation, partnership",
-      "Investment Decision — rental valuation, redevelopment, feasibility and viability",
-      "Litigation — compulsory acquisition, injurious affection, fraud and damage cases, division of property",
-      "Taxation — valuation for rating",
-      "Insurance — fire, theft, and loss insurance",
-    ],
+      "Independent valuations for mortgage, insurance, litigation, taxation and investment purposes, delivered to IVS and NIESV/ESVARBON professional standards.",
   },
   {
     icon: Building2,
-    title: "Property Management",
-    tagline: "Residential and commercial property management",
+    title: "Property & Estate Management",
     description:
-      "We offer management services for a broad range of properties — residential rental apartments (town homes, detached houses, duplexes) to commercial properties (retail outlets, high-rise buildings) — aiming for the maximum return while maintaining your investment at a high standard.",
-    points: [
-      "Property maintenance and services",
-      "Rent collection and lease management",
-      "Agency/brokerage — sales, leasing, marketing",
-      "Administration and dispute resolution",
-      "Hand-over and inspection procedures",
-      "Reporting and financial management",
-    ],
+      "Full-service management of residential, commercial and mixed-use assets — tenancy administration, rent collection, maintenance oversight and reporting.",
   },
   {
-    icon: Briefcase,
-    title: "Property Development",
-    tagline: "Development advisory services",
+    icon: Key,
+    title: "Letting & Agency",
     description:
-      "Our vast experience in market trends for landed property — open market value, demand and supply forces, value prospects, and land use — equips us to guide clients toward an eventual success in developing needed shelter for varying purposes.",
-    points: [
-      "Advisory on new property development",
-      "Redevelopment and refurbishment of existing accommodation",
-      "Guidance through change-of-purpose and related legislation",
-      "Guidance toward the highest and best use of an investment",
-    ],
+      "Sales and letting brokerage across Enugu State, connecting verified property with qualified buyers and tenants.",
   },
   {
-    icon: HandCoins,
-    title: "Business Development",
-    tagline: "Coordinating the pillars of real estate business",
+    icon: Map,
+    title: "Land & Estate Development",
     description:
-      "We deal with the pillars of real estate business that require better coordination and cooperation among developers, real estate promoters, brokers and middlemen, financiers, and property owners.",
-    points: [],
+      "Feasibility studies, layout planning and advisory support for land development and estate schemes from acquisition to delivery.",
+  },
+  {
+    icon: FileCheck2,
+    title: "Professional Documentation",
+    description:
+      "Certificate of Occupancy processing, deed registration and title perfection support in line with the Land Use Act 1978 and Enugu State lands administration.",
+  },
+  {
+    icon: Lightbulb,
+    title: "Real Estate Advisory",
+    description:
+      "Strategic advice to institutions, banks, corporations and governments on property and investment decisions.",
   },
 ];
 
@@ -77,41 +63,27 @@ export default function ServicesPage() {
               Our Services
             </h1>
             <p className="mt-4 text-lg text-white/80">
-              Iwuba Ifediora & Associates (IIA) is a registered firm of
-              Estate Surveyors & Valuers versed in valuation for all
-              purposes, property management, agency, and property
-              development consulting.
+              Registered with NIESV and ESVARBON, IIA has built a reputation
+              on professional expertise, trusted relationships and
+              disciplined practice — across valuation, property management,
+              estate agency, land development and professional advisory.
             </p>
           </FadeIn>
         </div>
       </section>
 
       <Section>
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, i) => (
             <FadeIn key={service.title} delay={i * 0.08}>
               <div className="h-full rounded-2xl bg-white p-8 shadow-sm ring-1 ring-slate-100">
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-blue/10">
                   <service.icon className="h-6 w-6 text-brand-blue" />
                 </div>
-                <span className="mt-4 block text-sm font-semibold uppercase tracking-wider text-brand-blue">
-                  {service.tagline}
-                </span>
-                <h2 className="mt-1 font-heading text-2xl font-bold text-slate-900">
+                <h2 className="mt-4 font-heading text-xl font-bold text-slate-900">
                   {service.title}
                 </h2>
                 <p className="mt-3 text-sm text-slate-600">{service.description}</p>
-
-                {service.points.length > 0 && (
-                  <ul className="mt-5 space-y-2">
-                    {service.points.map((point) => (
-                      <li key={point} className="flex gap-2 text-sm text-slate-600">
-                        <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand-green" />
-                        {point}
-                      </li>
-                    ))}
-                  </ul>
-                )}
               </div>
             </FadeIn>
           ))}

@@ -2,6 +2,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import Section, { SectionHeading } from "@/components/Section";
 import FadeIn from "@/components/FadeIn";
 import InquiryForm from "@/components/InquiryForm";
+import { InstagramIcon } from "@/components/icons/SocialIcons";
 
 export const metadata = {
   title: "Contact Us | IIA Properties",
@@ -36,6 +37,17 @@ export default function ContactPage() {
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-brand-blue" />
                 {office.email}
+              </li>
+              <li className="flex items-center gap-3">
+                <InstagramIcon className="h-5 w-5 text-brand-blue" />
+                <a
+                  href="https://instagram.com/iiaproperties"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-brand-blue"
+                >
+                  @iiaproperties
+                </a>
               </li>
             </ul>
           </div>
