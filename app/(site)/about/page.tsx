@@ -83,16 +83,13 @@ export default function AboutPage() {
               Iwuba Ifediora & Associates
             </h2>
             <p className="mt-4 text-slate-600">
-              Registered with NIESV and ESVARBON, IIA has built a reputation
-              on professional expertise, trusted relationships and
-              disciplined practice — across valuation, property management,
-              estate agency, land development and professional advisory.
-            </p>
-            <p className="mt-4 text-slate-600">
-              IWUBA IFEDIORA &amp; ASSOCIATES (IIA) is a registered firm of
-              Estate Surveyors &amp; Valuers versed in arrays of
-              specializations on valuation for all purposes, property
-              management, agency, and property development consulting.
+              IWUBA IFEDIORA &amp; ASSOCIATES (IIA) is a firm of Estate
+              Surveyors &amp; Valuers registered with NIESV and ESVARBON,
+              versed in arrays of specializations across valuation for all
+              purposes, property management, estate agency, land development
+              and professional advisory. IIA has built a reputation on
+              professional expertise, trusted relationships and disciplined
+              practice.
             </p>
             <p className="mt-4 text-slate-600">
               We employ the doctrinal motto of honesty and devotion in the
