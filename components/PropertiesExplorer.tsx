@@ -25,9 +25,9 @@ const bedOptions = [1, 2, 3, 4];
 
 const priceRanges = [
   { label: "Any Price", min: 0, max: Infinity },
-  { label: "Under ₦800M / ₦2.5M", min: 0, max: 800000000 },
-  { label: "₦800M - ₦1.5B / ₦2.5M - ₦5M", min: 800000000, max: 1500000000 },
-  { label: "₦1.5B+ / ₦5M+", min: 1500000000, max: Infinity },
+  { label: "Under ₦800M / ₦2.5M p.a.", min: 0, max: 800000000 },
+  { label: "₦800M - ₦1.5B / ₦2.5M - ₦5M p.a.", min: 800000000, max: 1500000000 },
+  { label: "₦1.5B+ / ₦5M+ p.a.", min: 1500000000, max: Infinity },
 ];
 
 const PAGE_SIZE = 6;

@@ -11,7 +11,7 @@ export function formatPrice(price: number, status: "for-sale" | "for-rent") {
     maximumFractionDigits: 0,
   }).format(price);
 
-  return status === "for-rent" ? `${formatted}/mo` : formatted;
+  return status === "for-rent" ? `${formatted} per annum` : formatted;
 }
 
 export function formatDate(iso: string) {

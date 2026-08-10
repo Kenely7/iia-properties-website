@@ -172,7 +172,7 @@ export default function PropertyForm({ initialData }: PropertyFormProps) {
 
         <div>
           <label className={labelClass}>
-            Price (₦) {form.status === "for-rent" && "(per month)"}
+            Price (₦) {form.status === "for-rent" && "(per annum)"}
           </label>
           <input
             type="number"

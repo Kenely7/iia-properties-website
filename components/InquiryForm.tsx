@@ -85,7 +85,7 @@ export default function InquiryForm({
               className={inputClass}
               value={form.phone}
               onChange={(e) => update("phone", e.target.value)}
-              placeholder="(555) 555-0100"
+              placeholder="0803 123 4567"
             />
           </div>
         </div>
