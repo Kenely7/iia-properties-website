@@ -63,8 +63,12 @@ export default function VerifyCard({
           <dl className="mt-6 divide-y divide-slate-100">
             {fields.map((field) => (
               <div key={field.label} className="grid grid-cols-2 gap-4 py-3">
-                <dt className="font-bold text-slate-900">{field.label}</dt>
-                <dd className="text-slate-600">{field.value}</dd>
+                <dt className="min-w-0 break-words font-bold text-slate-900">
+                  {field.label}
+                </dt>
+                <dd className="min-w-0 break-words text-slate-600">
+                  {field.value}
+                </dd>
               </div>
             ))}
           </dl>
