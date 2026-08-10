@@ -16,28 +16,24 @@ export const metadata = {
 const foundation = [
   {
     icon: Target,
-    number: "01",
     eyebrow: "Purpose",
     title: "Why We Exist",
     body: "To help individuals, businesses, institutions and governments make confident property and real estate decisions through trusted professional advice, innovative solutions and exceptional service.",
   },
   {
     icon: Compass,
-    number: "02",
     eyebrow: "Vision",
     title: "Where We're Going",
     body: "To become Africa's most trusted and innovative real estate advisory institution, setting the benchmark for professional excellence, intelligent solutions and enduring client value.",
   },
   {
     icon: Rocket,
-    number: "03",
     eyebrow: "Mission",
     title: "How We Deliver",
     body: "We provide world-class estate surveying, valuation, property management, advisory and real estate solutions through exceptional people, intelligent systems and innovative practices that create lasting value for our clients, communities and stakeholders.",
   },
   {
     icon: BookOpen,
-    number: "05",
     eyebrow: "Philosophy",
     title: "What We Believe",
     body: "We believe that trust is earned through competence, integrity, consistency and service. Therefore, every assignment, every client and every decision matters.",
@@ -98,13 +94,8 @@ export default function TheProjectPage() {
           {foundation.map((item, i) => (
             <FadeIn key={item.title} delay={i * 0.08}>
               <div className="h-full rounded-2xl bg-white p-8 shadow-sm ring-1 ring-slate-100">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-blue/10">
-                    <item.icon className="h-6 w-6 text-brand-blue" />
-                  </div>
-                  <span className="font-heading text-sm font-bold text-slate-300">
-                    {item.number}
-                  </span>
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-blue/10">
+                  <item.icon className="h-6 w-6 text-brand-blue" />
                 </div>
                 <span className="mt-4 block text-sm font-semibold uppercase tracking-wider text-brand-blue">
                   {item.eyebrow}
@@ -124,7 +115,7 @@ export default function TheProjectPage() {
         <FadeIn className="mx-auto max-w-2xl text-center">
           <Quote className="mx-auto mb-4 h-10 w-10 text-white/60" />
           <span className="text-sm font-semibold uppercase tracking-wider text-white/70">
-            04 · Our Promise
+            Our Promise
           </span>
           <p className="mt-4 font-heading text-2xl font-bold sm:text-3xl">
             &ldquo;Every interaction with IIA will reflect professionalism,
@@ -137,7 +128,7 @@ export default function TheProjectPage() {
       {/* Guiding Principles */}
       <Section className="bg-brand-gray">
         <SectionHeading
-          eyebrow="07 · Our Guiding Principles"
+          eyebrow="Our Guiding Principles"
           title="What Governs Every Decision"
         />
         <div className="mx-auto mt-12 max-w-2xl space-y-4">

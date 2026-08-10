@@ -82,7 +82,7 @@ export default function AboutPage() {
             <h2 className="mt-3 font-heading text-3xl font-bold text-slate-900">
               Iwuba Ifediora & Associates
             </h2>
-            <p className="mt-4 text-lg font-medium text-slate-700">
+            <p className="mt-4 text-slate-600">
               Registered with NIESV and ESVARBON, IIA has built a reputation
               on professional expertise, trusted relationships and
               disciplined practice — across valuation, property management,
