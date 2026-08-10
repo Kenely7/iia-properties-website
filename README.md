@@ -11,14 +11,31 @@ Company writeups (About, Services, Contact info) and the logo were sourced from 
 - Framer Motion for scroll/fade animations
 - lucide-react for icons
 - Poppins font via `next/font/google`
-- File-based JSON data store (`data/properties.json`) via Next.js API routes
+- Postgres (Neon, installed via the Vercel Marketplace) for property data, accessed through `@neondatabase/serverless` in [lib/properties.server.ts](lib/properties.server.ts)
 
 ## Getting Started
 
-Install dependencies and run the dev server:
+Install dependencies:
 
 ```bash
 npm install
+```
+
+Pull environment variables (Postgres connection strings, SheetDB endpoints) from Vercel:
+
+```bash
+vercel env pull .env.local
+```
+
+If the database is empty (first run), create the table and seed it from `data/properties.json`:
+
+```bash
+node scripts/seed-db.mjs
+```
+
+Then run the dev server:
+
+```bash
 npm run dev
 ```
 
@@ -46,8 +63,9 @@ app/
     admin/login|logout/ Session cookie login/logout
 components/            Shared UI (Navbar, Footer, PropertyCard, SearchBar, etc.)
 components/admin/      Admin-only UI (AdminTable, PropertyForm, ConfirmDeleteModal)
-lib/                   Types, utils, and the properties data-access layer
-data/properties.json   Seed data / persisted listings
+lib/                   Types, utils, and the properties data-access layer (Postgres via Neon)
+data/properties.json   Seed data, used once by scripts/seed-db.mjs — not read at runtime
+scripts/seed-db.mjs    Creates the properties table and seeds it (run once per fresh database)
 proxy.ts               Route protection for /admin/* (Next 16's middleware convention)
 ```
 
@@ -64,26 +82,29 @@ Visit [http://localhost:3000/admin](http://localhost:3000/admin) — you'll be r
 ### Add a property end-to-end
 
 1. Log in at `/admin/login`.
-2. Click **Add New Property**, fill in the form (title, price, status, address, details, image URLs, agent info), and submit.
-3. The listing is written to `data/properties.json` and immediately appears on the public **Properties** page and, if "Featured" is checked, on the **Home** page.
+2. Click **Add New Property**, fill in the form (title, price, status, address, beds/baths, image URLs, agent info), and submit.
+3. The listing is inserted into Postgres and immediately appears on the public **Properties** page and, if "Featured" is checked, on the **Home** page.
 
 ### Remove a property end-to-end
 
 1. From the admin dashboard table, click the trash icon on the listing you want to remove (e.g. once it's sold or rented).
 2. Confirm in the dialog.
-3. The listing is deleted from `data/properties.json` and disappears from the public site immediately — there's no "sold" state to manage, per the current workflow.
+3. The listing is deleted from Postgres and disappears from the public site immediately — there's no "sold" state to manage, per the current workflow.
 
 You can also **Edit** a listing in place via the pencil icon without deleting/re-adding it.
 
+> Note: the Home page's Featured Properties section is statically prerendered at build/deploy time, so a newly added or edited listing may not show there until the next deploy — the **Properties** listing page and detail pages are always server-rendered per request and reflect changes immediately.
+
 ## Data & Persistence
 
-Property data lives in [data/properties.json](data/properties.json) and is read/written by [lib/properties.server.ts](lib/properties.server.ts), which is only ever imported by server-side code (API routes and server components).
+Property data lives in Postgres (provisioned via [Neon](https://neon.tech), installed as a Vercel Marketplace integration) and is read/written through [lib/properties.server.ts](lib/properties.server.ts), which is only ever imported by server-side code (API routes and server components). The connection uses `DATABASE_URL`, pulled automatically into `.env.local` by `vercel env pull`.
 
-**This is a simple file-based store meant for local development and demos.** It doesn't handle concurrent writes safely and won't persist on most serverless hosts (e.g. Vercel's filesystem is read-only/ephemeral in production). Before going to production, swap `lib/properties.server.ts` for a real database (Postgres via Supabase/Neon, etc.) — the API route contracts (`GET/POST /api/properties`, `GET/PUT/DELETE /api/properties/[id]`) are designed to stay the same either way.
+`data/properties.json` is kept only as the original seed data for `scripts/seed-db.mjs` — it is not read at runtime. To reset or re-seed a database, see that script.
 
 ## Notes
 
-- Prices are formatted in Nigerian Naira (₦) via `Intl.NumberFormat('en-NG', { currency: 'NGN' })` in [lib/utils.ts](lib/utils.ts). Areas/sqft are shown as sqm, and lot sizes use Nigerian "plot" units.
+- Prices are formatted in Nigerian Naira (₦) via `Intl.NumberFormat('en-NG', { currency: 'NGN' })` in [lib/utils.ts](lib/utils.ts); rentals are quoted per annum, matching Nigerian convention.
+- Property details are intentionally minimal — only bedrooms and bathrooms (no square footage, lot size, year built, or zip code).
 - Inquiry forms (property inquiry, services inquiry, contact form) are UI-only — they simulate a submission and show a success state, but don't send email or persist anywhere. Wire them up to an email service or the data layer as needed.
 - Map sections are static placeholders; swap in Google Maps/Mapbox embeds when ready.
 - The property catalog in `data/properties.json` is fictional placeholder listings relocated to real Enugu neighborhoods (GRA, Independence Layout, New Haven, Abakpa Nike, etc.) with Nigerian agent names/phone numbers — swap in the real IIA listings via the admin dashboard whenever they're ready.
