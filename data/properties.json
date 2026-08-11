@@ -25,12 +25,6 @@
       "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80",
       "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80"
     ],
-    "agent": {
-      "name": "Chidinma Eze",
-      "phone": "0803 214 5678",
-      "email": "chidinma.eze@iiaproperties.com",
-      "photo": "https://i.pravatar.cc/300?img=32"
-    },
     "featured": true,
     "dateAdded": "2026-06-12T10:00:00.000Z"
   },
@@ -59,12 +53,6 @@
       "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&w=1200&q=80",
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
     ],
-    "agent": {
-      "name": "Emeka Okafor",
-      "phone": "0805 331 9042",
-      "email": "emeka.okafor@iiaproperties.com",
-      "photo": "https://i.pravatar.cc/300?img=12"
-    },
     "featured": true,
     "dateAdded": "2026-07-01T10:00:00.000Z"
   },
@@ -92,12 +80,6 @@
       "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1200&q=80",
       "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80"
     ],
-    "agent": {
-      "name": "Ifeoma Nwosu",
-      "phone": "0701 556 2290",
-      "email": "ifeoma.nwosu@iiaproperties.com",
-      "photo": "https://i.pravatar.cc/300?img=47"
-    },
     "featured": true,
     "dateAdded": "2026-05-20T10:00:00.000Z"
   },
@@ -126,12 +108,6 @@
       "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1200&q=80",
       "https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=1200&q=80"
     ],
-    "agent": {
-      "name": "Chukwuemeka Obi",
-      "phone": "0812 447 3361",
-      "email": "chukwuemeka.obi@iiaproperties.com",
-      "photo": "https://i.pravatar.cc/300?img=15"
-    },
     "featured": false,
     "dateAdded": "2026-04-15T10:00:00.000Z"
   },
@@ -158,12 +134,6 @@
       "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80",
       "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1200&q=80"
     ],
-    "agent": {
-      "name": "Chidinma Eze",
-      "phone": "0803 214 5678",
-      "email": "chidinma.eze@iiaproperties.com",
-      "photo": "https://i.pravatar.cc/300?img=32"
-    },
     "featured": false,
     "dateAdded": "2026-07-10T10:00:00.000Z"
   },
@@ -192,12 +162,6 @@
       "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=80",
       "https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=1200&q=80"
     ],
-    "agent": {
-      "name": "Emeka Okafor",
-      "phone": "0805 331 9042",
-      "email": "emeka.okafor@iiaproperties.com",
-      "photo": "https://i.pravatar.cc/300?img=12"
-    },
     "featured": true,
     "dateAdded": "2026-06-28T10:00:00.000Z"
   },
@@ -225,12 +189,6 @@
       "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=1200&q=80",
       "https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=1200&q=80"
     ],
-    "agent": {
-      "name": "Ifeoma Nwosu",
-      "phone": "0701 556 2290",
-      "email": "ifeoma.nwosu@iiaproperties.com",
-      "photo": "https://i.pravatar.cc/300?img=47"
-    },
     "featured": false,
     "dateAdded": "2026-03-30T10:00:00.000Z"
   },
@@ -258,12 +216,6 @@
       "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1200&q=80",
       "https://images.unsplash.com/photo-1600607687644-c7531e489ece?auto=format&fit=crop&w=1200&q=80"
     ],
-    "agent": {
-      "name": "Chukwuemeka Obi",
-      "phone": "0812 447 3361",
-      "email": "chukwuemeka.obi@iiaproperties.com",
-      "photo": "https://i.pravatar.cc/300?img=15"
-    },
     "featured": false,
     "dateAdded": "2026-07-22T10:00:00.000Z"
   },
@@ -292,12 +244,6 @@
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
       "https://images.unsplash.com/photo-1571939228382-b2f2b585ce15?auto=format&fit=crop&w=1200&q=80"
     ],
-    "agent": {
-      "name": "Chidinma Eze",
-      "phone": "0803 214 5678",
-      "email": "chidinma.eze@iiaproperties.com",
-      "photo": "https://i.pravatar.cc/300?img=32"
-    },
     "featured": true,
     "dateAdded": "2026-02-18T10:00:00.000Z"
   },
@@ -324,12 +270,6 @@
       "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=1200&q=80",
       "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80"
     ],
-    "agent": {
-      "name": "Emeka Okafor",
-      "phone": "0805 331 9042",
-      "email": "emeka.okafor@iiaproperties.com",
-      "photo": "https://i.pravatar.cc/300?img=12"
-    },
     "featured": false,
     "dateAdded": "2026-07-28T10:00:00.000Z"
   }

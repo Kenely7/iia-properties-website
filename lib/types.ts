@@ -1,12 +1,5 @@
 export type PropertyStatus = "for-sale" | "for-rent";
 
-export interface Agent {
-  name: string;
-  phone: string;
-  email: string;
-  photo: string;
-}
-
 export interface Property {
   id: string;
   title: string;
@@ -21,7 +14,6 @@ export interface Property {
   baths: number;
   amenities: string[];
   images: string[];
-  agent: Agent;
   featured: boolean;
   dateAdded: string;
 }

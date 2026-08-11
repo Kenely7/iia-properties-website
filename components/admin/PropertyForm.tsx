@@ -34,10 +34,6 @@ function toFormState(data?: Property) {
     baths: data?.baths?.toString() ?? "",
     amenities: data?.amenities?.join(", ") ?? "",
     images: data?.images?.join("\n") ?? "",
-    agentName: data?.agent?.name ?? "",
-    agentPhone: data?.agent?.phone ?? "",
-    agentEmail: data?.agent?.email ?? "",
-    agentPhoto: data?.agent?.photo ?? "https://i.pravatar.cc/300?img=5",
     featured: data?.featured ?? false,
   };
 }
@@ -81,12 +77,6 @@ export default function PropertyForm({ initialData }: PropertyFormProps) {
         .split("\n")
         .map((i) => i.trim())
         .filter(Boolean),
-      agent: {
-        name: form.agentName,
-        phone: form.agentPhone,
-        email: form.agentEmail,
-        photo: form.agentPhoto,
-      },
       featured: form.featured,
     };
 
@@ -279,46 +269,6 @@ export default function PropertyForm({ initialData }: PropertyFormProps) {
             onChange={(e) => update("images", e.target.value)}
             placeholder="https://images.unsplash.com/..."
           />
-        </div>
-      </section>
-
-      <section className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-100">
-        <h3 className="mb-4 font-heading font-bold text-slate-900">
-          Listing Agent
-        </h3>
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-          <div>
-            <label className={labelClass}>Name</label>
-            <input
-              className={inputClass}
-              value={form.agentName}
-              onChange={(e) => update("agentName", e.target.value)}
-            />
-          </div>
-          <div>
-            <label className={labelClass}>Phone</label>
-            <input
-              className={inputClass}
-              value={form.agentPhone}
-              onChange={(e) => update("agentPhone", e.target.value)}
-            />
-          </div>
-          <div>
-            <label className={labelClass}>Email</label>
-            <input
-              className={inputClass}
-              value={form.agentEmail}
-              onChange={(e) => update("agentEmail", e.target.value)}
-            />
-          </div>
-          <div>
-            <label className={labelClass}>Photo URL</label>
-            <input
-              className={inputClass}
-              value={form.agentPhoto}
-              onChange={(e) => update("agentPhoto", e.target.value)}
-            />
-          </div>
         </div>
       </section>
 

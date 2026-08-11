@@ -1,6 +1,6 @@
 import "server-only";
 import { neon } from "@neondatabase/serverless";
-import type { Agent, NewProperty, Property } from "./types";
+import type { NewProperty, Property } from "./types";
 
 const sql = neon(process.env.DATABASE_URL!);
 
@@ -18,7 +18,6 @@ interface PropertyRow {
   baths: string;
   amenities: string[];
   images: string[];
-  agent: Agent;
   featured: boolean;
   date_added: string;
 }
@@ -38,7 +37,6 @@ function rowToProperty(row: PropertyRow): Property {
     baths: Number(row.baths),
     amenities: row.amenities,
     images: row.images,
-    agent: row.agent,
     featured: row.featured,
     dateAdded: new Date(row.date_added).toISOString(),
   };
@@ -65,12 +63,12 @@ export async function addProperty(data: NewProperty): Promise<Property> {
   const rows = (await sql`
     INSERT INTO properties (
       id, title, description, status, price, address, city, state,
-      property_type, beds, baths, amenities, images, agent, featured, date_added
+      property_type, beds, baths, amenities, images, featured, date_added
     ) VALUES (
       ${id}, ${data.title}, ${data.description}, ${data.status}, ${data.price},
       ${data.address}, ${data.city}, ${data.state}, ${data.propertyType},
       ${data.beds}, ${data.baths}, ${data.amenities}, ${data.images},
-      ${JSON.stringify(data.agent)}, ${data.featured}, ${dateAdded}
+      ${data.featured}, ${dateAdded}
     )
     RETURNING *
   `) as PropertyRow[];
@@ -101,7 +99,6 @@ export async function updateProperty(
       baths = ${merged.baths},
       amenities = ${merged.amenities},
       images = ${merged.images},
-      agent = ${JSON.stringify(merged.agent)},
       featured = ${merged.featured}
     WHERE id = ${id}
     RETURNING *

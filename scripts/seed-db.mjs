@@ -32,7 +32,6 @@ async function main() {
       baths NUMERIC NOT NULL DEFAULT 0,
       amenities TEXT[] NOT NULL DEFAULT '{}',
       images TEXT[] NOT NULL DEFAULT '{}',
-      agent JSONB NOT NULL DEFAULT '{}',
       featured BOOLEAN NOT NULL DEFAULT false,
       date_added TIMESTAMPTZ NOT NULL DEFAULT now()
     )
@@ -52,12 +51,12 @@ async function main() {
     await sql`
       INSERT INTO properties (
         id, title, description, status, price, address, city, state,
-        property_type, beds, baths, amenities, images, agent, featured, date_added
+        property_type, beds, baths, amenities, images, featured, date_added
       ) VALUES (
         ${p.id}, ${p.title}, ${p.description}, ${p.status}, ${p.price},
         ${p.address}, ${p.city}, ${p.state}, ${p.propertyType},
         ${p.beds}, ${p.baths}, ${p.amenities}, ${p.images},
-        ${JSON.stringify(p.agent)}, ${p.featured}, ${p.dateAdded}
+        ${p.featured}, ${p.dateAdded}
       )
     `;
   }
