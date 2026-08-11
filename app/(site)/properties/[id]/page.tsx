@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Bath, BedDouble, CheckCircle2, Mail, MapPin, Phone } from "lucide-react";
@@ -105,40 +104,27 @@ export default async function PropertyDetailPage({
         {/* Sidebar */}
         <div className="space-y-6 lg:sticky lg:top-24 lg:self-start">
           <div className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-100">
-            <div className="flex items-center gap-4">
-              <div className="relative h-16 w-16 overflow-hidden rounded-full">
-                <Image
-                  src={property.agent.photo}
-                  alt={property.agent.name}
-                  fill
-                  sizes="64px"
-                  className="object-cover"
-                />
-              </div>
-              <div>
-                <p className="font-heading font-bold text-slate-900">
-                  {property.agent.name}
-                </p>
-                <p className="text-sm text-slate-500">Listing Agent</p>
-              </div>
-            </div>
+            <p className="font-heading font-bold text-slate-900">
+              Iwuba Ifediora &amp; Associates
+            </p>
+            <p className="text-sm text-slate-500">Listing Agent</p>
 
             <div className="mt-5 space-y-2 text-sm text-slate-600">
               <p className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-brand-blue" />
-                {property.agent.phone}
+                0811 545 3020
               </p>
               <p className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-brand-blue" />
-                {property.agent.email}
+                iwuba.ifediora@gmail.com
               </p>
             </div>
 
             <a
-              href={`mailto:${property.agent.email}`}
+              href="mailto:iwuba.ifediora@gmail.com"
               className="mt-5 block w-full rounded-xl bg-brand-blue px-4 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-brand-blue-dark"
             >
-              Contact Agent
+              Contact Us
             </a>
           </div>
 
