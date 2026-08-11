@@ -96,7 +96,7 @@ export default async function HomePage() {
               No need to sweat — let us help you today.
             </p>
             <div className="mt-8 flex justify-center">
-              <Button href="/contact" variant="outline" size="lg">
+              <Button href="/services#service-inquiry" variant="outline" size="lg">
                 Request a Valuation
               </Button>
             </div>

@@ -91,7 +91,7 @@ export default function ServicesPage() {
       </Section>
 
       {/* Inquiry Form */}
-      <Section className="bg-brand-gray">
+      <Section id="service-inquiry" className="bg-brand-gray">
         <SectionHeading
           eyebrow="Get Started"
           title="Request a Quote"
