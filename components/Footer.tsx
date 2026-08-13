@@ -14,7 +14,6 @@ const footerLinks = [
     links: [
       { label: "About Us", href: "/about" },
       { label: "Services", href: "/services" },
-      { label: "The 2030 Project", href: "/2030-project" },
       { label: "Contact", href: "/contact" },
       { label: "Admin Login", href: "/admin/login" },
     ],

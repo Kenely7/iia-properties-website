@@ -1,13 +1,19 @@
 import {
   Award,
+  BookOpen,
   Briefcase,
   Building2,
+  CheckCircle2,
+  Compass,
   FileCheck2,
   Key,
   Lightbulb,
   Map,
+  Quote,
+  Rocket,
   Scale,
   ShieldCheck,
+  Target,
   TrendingUp,
 } from "lucide-react";
 import Section, { SectionHeading } from "@/components/Section";
@@ -17,6 +23,43 @@ import Button from "@/components/Button";
 export const metadata = {
   title: "About Us | IIA Properties",
 };
+
+const foundation = [
+  {
+    icon: Target,
+    eyebrow: "Purpose",
+    title: "Why We Exist",
+    body: "To help individuals, businesses, institutions and governments make confident property and real estate decisions through trusted professional advice, innovative solutions and exceptional service.",
+  },
+  {
+    icon: Compass,
+    eyebrow: "Vision",
+    title: "Where We're Going",
+    body: "To become Africa's most trusted and innovative real estate advisory institution, setting the benchmark for professional excellence, intelligent solutions and enduring client value.",
+  },
+  {
+    icon: Rocket,
+    eyebrow: "Mission",
+    title: "How We Deliver",
+    body: "We provide world-class estate surveying, valuation, property management, advisory and real estate solutions through exceptional people, intelligent systems and innovative practices that create lasting value for our clients, communities and stakeholders.",
+  },
+  {
+    icon: BookOpen,
+    eyebrow: "Philosophy",
+    title: "What We Believe",
+    body: "We believe that trust is earned through competence, integrity, consistency and service. Therefore, every assignment, every client and every decision matters.",
+  },
+];
+
+const principles = [
+  "People before Profit.",
+  "Systems before Scale.",
+  "Trust before Transactions.",
+  "Quality before Quantity.",
+  "Innovation without compromising Professionalism.",
+  "Learning never stops.",
+  "Leave everything better than you found it.",
+];
 
 const coreValues = [
   { icon: ShieldCheck, title: "Professionalism" },
@@ -36,6 +79,24 @@ const stats = [
   { label: "Core Service Areas", value: "6" },
 ];
 
+const aspirations = [
+  "Nigeria's most respected valuation practice",
+  "The benchmark for property management in South-East Nigeria",
+  "A nationally recognized advisory firm",
+  "A technology-enabled professional practice",
+  "A trusted advisor to governments, banks and corporations",
+  "A destination employer for young professionals",
+  "A respected industry thought leader",
+  "The foundation of a diversified real estate group",
+];
+
+const mantra = [
+  "Think Professionally.",
+  "Serve Exceptionally.",
+  "Innovate Continuously.",
+  "Execute Relentlessly.",
+];
+
 const services = [
   { icon: TrendingUp, title: "Property Valuation" },
   { icon: Building2, title: "Property & Estate Management" },
@@ -43,16 +104,6 @@ const services = [
   { icon: Map, title: "Land & Estate Development" },
   { icon: FileCheck2, title: "Professional Documentation" },
   { icon: Lightbulb, title: "Real Estate Advisory" },
-];
-
-const principles = [
-  "People before Profit.",
-  "Systems before Scale.",
-  "Trust before Transactions.",
-  "Quality before Quantity.",
-  "Innovation without compromising Professionalism.",
-  "Learning never stops.",
-  "Leave everything better than you found it.",
 ];
 
 export default function AboutPage() {
@@ -109,33 +160,45 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      {/* Vision & Mission */}
+      {/* Purpose / Vision / Mission / Philosophy */}
       <Section className="bg-brand-gray">
-        <div className="mx-auto grid max-w-4xl grid-cols-1 gap-8 sm:grid-cols-2">
-          <FadeIn>
-            <div className="h-full rounded-2xl bg-white p-8 shadow-sm ring-1 ring-slate-100">
-              <h3 className="font-heading text-xl font-bold text-brand-blue">
-                Vision
-              </h3>
-              <p className="mt-3 text-sm text-slate-600">
-                To become the frontline firm in the field of Estate
-                Surveying and Valuation in Nigeria, and to be reckoned with
-                globally in real estate services.
-              </p>
-            </div>
-          </FadeIn>
-          <FadeIn delay={0.08}>
-            <div className="h-full rounded-2xl bg-white p-8 shadow-sm ring-1 ring-slate-100">
-              <h3 className="font-heading text-xl font-bold text-brand-blue">
-                Mission
-              </h3>
-              <p className="mt-3 text-sm text-slate-600">
-                To deliver excellent professional services to our clients,
-                exceeding their financial and value expectations.
-              </p>
-            </div>
-          </FadeIn>
+        <SectionHeading
+          eyebrow="Our Foundation"
+          title="Purpose, Vision, Mission & Philosophy"
+        />
+        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2">
+          {foundation.map((item, i) => (
+            <FadeIn key={item.title} delay={i * 0.08}>
+              <div className="h-full rounded-2xl bg-white p-8 shadow-sm ring-1 ring-slate-100">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-blue/10">
+                  <item.icon className="h-6 w-6 text-brand-blue" />
+                </div>
+                <span className="mt-4 block text-sm font-semibold uppercase tracking-wider text-brand-blue">
+                  {item.eyebrow}
+                </span>
+                <h3 className="mt-1 font-heading text-xl font-bold text-slate-900">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-sm text-slate-600">{item.body}</p>
+              </div>
+            </FadeIn>
+          ))}
         </div>
+      </Section>
+
+      {/* Our Promise */}
+      <Section className="bg-brand-blue text-white">
+        <FadeIn className="mx-auto max-w-2xl text-center">
+          <Quote className="mx-auto mb-4 h-10 w-10 text-white/60" />
+          <span className="text-sm font-semibold uppercase tracking-wider text-white/70">
+            Our Promise
+          </span>
+          <p className="mt-4 font-heading text-2xl font-bold sm:text-3xl">
+            &ldquo;Every interaction with IIA will reflect professionalism,
+            integrity, competence, innovation and exceptional client
+            care.&rdquo;
+          </p>
+        </FadeIn>
       </Section>
 
       {/* Guiding Principles */}
@@ -184,6 +247,39 @@ export default function AboutPage() {
             </FadeIn>
           ))}
         </div>
+      </Section>
+
+      {/* By 2030 */}
+      <Section className="bg-brand-gray">
+        <SectionHeading eyebrow="By 2030" title="Our Aspiration" />
+        <div className="mx-auto mt-12 grid max-w-4xl grid-cols-1 gap-4 sm:grid-cols-2">
+          {aspirations.map((aspiration, i) => (
+            <FadeIn key={aspiration} delay={i * 0.05}>
+              <div className="flex items-start gap-3 rounded-xl bg-white p-4 shadow-sm ring-1 ring-slate-100">
+                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-brand-green" />
+                <p className="text-sm font-medium text-slate-700">
+                  {aspiration}
+                </p>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </Section>
+
+      {/* Mantra */}
+      <Section className="bg-slate-900 text-white">
+        <FadeIn className="mx-auto max-w-2xl text-center">
+          <span className="text-sm font-semibold uppercase tracking-wider text-white/60">
+            Our Mantra
+          </span>
+          <div className="mt-4 space-y-1">
+            {mantra.map((line) => (
+              <p key={line} className="font-heading text-2xl font-bold sm:text-3xl">
+                {line}
+              </p>
+            ))}
+          </div>
+        </FadeIn>
       </Section>
 
       {/* Services recap */}
