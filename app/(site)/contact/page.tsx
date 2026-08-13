@@ -61,9 +61,16 @@ export default function ContactPage() {
             <p className="mt-1 text-sm text-slate-600">{office.phones.join(" / ")}</p>
           </div>
 
-          <div className="flex h-56 flex-col items-center justify-center gap-2 rounded-2xl bg-brand-gray text-slate-400">
-            <MapPin className="h-8 w-8" />
-            <p className="text-sm">Map view coming soon</p>
+          <div className="h-56 overflow-hidden rounded-2xl ring-1 ring-slate-100">
+            <iframe
+              title="IIA Properties office location"
+              src={`https://www.google.com/maps?q=${encodeURIComponent(office.address)}&output=embed`}
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
         </FadeIn>
 
