@@ -32,7 +32,7 @@ export default function VerifyCard({
       <div className="w-full max-w-md rounded-2xl bg-white p-8 shadow-lg ring-1 ring-slate-100">
         <div className="flex justify-center">
           <Image
-            src="/iia-logo.jpg"
+            src="/iia-logo-transparent.png"
             alt="Iwuba Ifediora & Associates"
             width={130}
             height={130}

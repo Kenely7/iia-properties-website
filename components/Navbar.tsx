@@ -81,7 +81,7 @@ export default function Navbar() {
         <div className="flex items-center gap-4">
           <Link href="/" className="flex items-center gap-2">
             <Image
-              src="/iia-logo.jpg"
+              src="/iia-logo-transparent.png"
               alt="Iwuba Ifediora & Associates"
               width={603}
               height={603}
