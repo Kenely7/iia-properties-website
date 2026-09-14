@@ -138,7 +138,7 @@ export default async function HomePage() {
         <FadeIn>
           <SectionHeading
             eyebrow="What We Do"
-            title="IIA Properties Offers the Following Services"
+            title="We Offer the Following Services"
             description="Registered Estate Surveyors & Valuers serving property sales, rentals, and the full range of estate services below."
           />
         </FadeIn>
@@ -218,7 +218,7 @@ export default async function HomePage() {
             Ready to Find Your Dream Home?
           </h2>
           <p className="mt-4 text-lg text-slate-300">
-            No need to sweat. Let us help you today — whether you&apos;re
+            Search no further. Let us help you today — whether you&apos;re
             buying, renting, or managing property.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">

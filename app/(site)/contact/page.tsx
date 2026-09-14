@@ -10,7 +10,7 @@ export const metadata = {
 
 const office = {
   address: "Suite 2N Purity Plaza, Abakaliki Road, GRA Enugu, Nigeria",
-  phones: ["0811 545 3020", "0803 550 2100"],
+  phones: ["0811 545 3020", "0915 557 7750"],
   email: "iwuba.ifediora@gmail.com",
 };
 
@@ -19,7 +19,7 @@ export default function ContactPage() {
     <Section containerClassName="max-w-7xl">
       <SectionHeading
         eyebrow="Contact"
-        title="We'd Love to Hear From You"
+        title="We Would Love to Hear From You"
         description="Kindly use the contact form below to send us a message. Questions about a listing, our services, or just getting started? Reach out any time."
       />
 

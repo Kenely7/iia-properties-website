@@ -34,9 +34,9 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <Link href="/" className="mb-4 inline-block rounded-lg bg-white p-2">
+            <Link href="/" className="mb-4 inline-block">
               <Image
-                src="/iia-logo.jpg"
+                src="/iia-logo-white.png"
                 alt="Iwuba Ifediora & Associates"
                 width={603}
                 height={603}
@@ -101,7 +101,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 shrink-0 text-brand-blue-light" />
-                0811 545 3020 / 0803 550 2100
+                0811 545 3020 / 0915 557 7750
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 shrink-0 text-brand-blue-light" />

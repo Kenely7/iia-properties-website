@@ -17,10 +17,10 @@
   --color-brand-gold: #b45309;
   --color-brand-green: #15803d;
 
-  /* Fonts */
-  --font-heading: var(--font-poppins);
-  --font-body: var(--font-poppins);
-  --font-sans: var(--font-poppins);
+  /* Fonts — Playfair Display (classy serif) for headings, Inter (clean, simple) for body */
+  --font-heading: var(--font-playfair-display);
+  --font-body: var(--font-inter);
+  --font-sans: var(--font-inter);
 }
 
 body {
