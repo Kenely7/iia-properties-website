@@ -66,7 +66,14 @@ export default function VerifyCard({
                 <dt className="min-w-0 break-words font-bold text-slate-900">
                   {field.label}
                 </dt>
-                <dd className="min-w-0 break-words text-slate-600">
+                <dd
+                  className={`min-w-0 break-words ${
+                    field.label === "Status" &&
+                    field.value.toLowerCase() === "valid"
+                      ? "font-semibold text-green-600"
+                      : "text-slate-600"
+                  }`}
+                >
                   {field.value}
                 </dd>
               </div>
