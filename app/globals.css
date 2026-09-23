@@ -17,10 +17,10 @@
   --color-brand-gold: #b45309;
   --color-brand-green: #15803d;
 
-  /* Fonts — Sorts Mill Goudy (classic, professional serif) for headings, Inter (clean, simple) for body */
+  /* Fonts — Sorts Mill Goudy (classic, professional serif) applied site-wide, headings and body alike */
   --font-heading: var(--font-sorts-mill-goudy);
-  --font-body: var(--font-inter);
-  --font-sans: var(--font-inter);
+  --font-body: var(--font-sorts-mill-goudy);
+  --font-sans: var(--font-sorts-mill-goudy);
 }
 
 body {
