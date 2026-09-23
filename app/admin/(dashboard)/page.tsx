@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Home, Key, Plus, Tag } from "lucide-react";
+import { Home, Key, Plus, Tag, Clock } from "lucide-react";
 import AdminTable from "@/components/admin/AdminTable";
 import type { Property } from "@/lib/types";
 
@@ -10,24 +10,36 @@ export default function AdminDashboardPage() {
   const [properties, setProperties] = useState<Property[]>([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetch("/api/properties")
+  function loadProperties() {
+    return fetch("/api/admin/properties")
       .then((res) => res.json())
       .then((data) => {
         setProperties(data);
         setLoading(false);
       });
+  }
+
+  useEffect(() => {
+    loadProperties();
   }, []);
 
   function handleDeleted(id: string) {
     setProperties((prev) => prev.filter((p) => p.id !== id));
   }
 
+  function handleUpdated(updated: Property) {
+    setProperties((prev) => prev.map((p) => (p.id === updated.id ? updated : p)));
+  }
+
+  const pending = properties.filter((p) => !p.published);
+  const published = properties.filter((p) => p.published);
+
   const forSaleCount = properties.filter((p) => p.status === "for-sale").length;
   const forRentCount = properties.filter((p) => p.status === "for-rent").length;
 
   const stats = [
     { label: "Total Listings", value: properties.length, icon: Tag },
+    { label: "Pending Approval", value: pending.length, icon: Clock },
     { label: "For Sale", value: forSaleCount, icon: Home },
     { label: "For Rent", value: forRentCount, icon: Key },
   ];
@@ -52,7 +64,7 @@ export default function AdminDashboardPage() {
         </Link>
       </div>
 
-      <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
+      <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {stats.map((stat) => (
           <div
             key={stat.label}
@@ -71,13 +83,46 @@ export default function AdminDashboardPage() {
         ))}
       </div>
 
-      <div className="mt-8">
+      <div className="mt-10">
         {loading ? (
           <div className="rounded-2xl bg-white p-12 text-center text-slate-400 shadow-sm ring-1 ring-slate-100">
             Loading listings...
           </div>
         ) : (
-          <AdminTable properties={properties} onDeleted={handleDeleted} />
+          <div className="space-y-10">
+            {pending.length > 0 && (
+              <div>
+                <h2 className="flex items-center gap-2 font-heading text-lg font-bold text-slate-900">
+                  <Clock className="h-5 w-5 text-brand-gold" />
+                  Pending Approval ({pending.length})
+                </h2>
+                <p className="mt-1 text-sm text-slate-500">
+                  These listings are not visible on the public site until
+                  approved and published.
+                </p>
+                <div className="mt-4">
+                  <AdminTable
+                    properties={pending}
+                    onDeleted={handleDeleted}
+                    onUpdated={handleUpdated}
+                  />
+                </div>
+              </div>
+            )}
+
+            <div>
+              <h2 className="font-heading text-lg font-bold text-slate-900">
+                Published Listings ({published.length})
+              </h2>
+              <div className="mt-4">
+                <AdminTable
+                  properties={published}
+                  onDeleted={handleDeleted}
+                  onUpdated={handleUpdated}
+                />
+              </div>
+            </div>
+          </div>
         )}
       </div>
     </div>

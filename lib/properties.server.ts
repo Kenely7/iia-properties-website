@@ -19,6 +19,7 @@ interface PropertyRow {
   amenities: string[];
   images: string[];
   featured: boolean;
+  published: boolean;
   date_added: string;
 }
 
@@ -38,11 +39,21 @@ function rowToProperty(row: PropertyRow): Property {
     amenities: row.amenities,
     images: row.images,
     featured: row.featured,
+    published: row.published,
     dateAdded: new Date(row.date_added).toISOString(),
   };
 }
 
+// Public-facing: only listings that have cleared the publishing approval step.
 export async function getAllProperties(): Promise<Property[]> {
+  const rows = (await sql`
+    SELECT * FROM properties WHERE published = true ORDER BY date_added DESC
+  `) as PropertyRow[];
+  return rows.map(rowToProperty);
+}
+
+// Admin dashboard: every listing, published or still pending approval.
+export async function getAllPropertiesForAdmin(): Promise<Property[]> {
   const rows = (await sql`
     SELECT * FROM properties ORDER BY date_added DESC
   `) as PropertyRow[];
@@ -60,15 +71,16 @@ export async function addProperty(data: NewProperty): Promise<Property> {
   const id = `p${Date.now()}`;
   const dateAdded = new Date().toISOString();
 
+  // New listings always start unpublished and wait for approval.
   const rows = (await sql`
     INSERT INTO properties (
       id, title, description, status, price, address, city, state,
-      property_type, beds, baths, amenities, images, featured, date_added
+      property_type, beds, baths, amenities, images, featured, published, date_added
     ) VALUES (
       ${id}, ${data.title}, ${data.description}, ${data.status}, ${data.price},
       ${data.address}, ${data.city}, ${data.state}, ${data.propertyType},
       ${data.beds}, ${data.baths}, ${data.amenities}, ${data.images},
-      ${data.featured}, ${dateAdded}
+      ${data.featured}, false, ${dateAdded}
     )
     RETURNING *
   `) as PropertyRow[];
@@ -78,12 +90,12 @@ export async function addProperty(data: NewProperty): Promise<Property> {
 
 export async function updateProperty(
   id: string,
-  data: Partial<NewProperty>
+  data: Partial<Omit<Property, "id" | "dateAdded">>
 ): Promise<Property | undefined> {
   const existing = await getPropertyById(id);
   if (!existing) return undefined;
 
-  const merged: NewProperty = { ...existing, ...data };
+  const merged: Omit<Property, "id" | "dateAdded"> = { ...existing, ...data };
 
   const rows = (await sql`
     UPDATE properties SET
@@ -99,7 +111,8 @@ export async function updateProperty(
       baths = ${merged.baths},
       amenities = ${merged.amenities},
       images = ${merged.images},
-      featured = ${merged.featured}
+      featured = ${merged.featured},
+      published = ${merged.published}
     WHERE id = ${id}
     RETURNING *
   `) as PropertyRow[];

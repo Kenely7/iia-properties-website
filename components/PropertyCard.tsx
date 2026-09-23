@@ -36,6 +36,13 @@ export default function PropertyCard({
           <div className="absolute left-3 top-3">
             <StatusBadge status={property.status} />
           </div>
+          {property.status === "sold" && (
+            <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/25">
+              <span className="-rotate-12 border-4 border-white px-6 py-1.5 text-2xl font-black uppercase tracking-widest text-white">
+                Sold
+              </span>
+            </div>
+          )}
         </div>
 
         <div className="flex flex-1 flex-col p-5">

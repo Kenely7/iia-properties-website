@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { Pencil, Trash2 } from "lucide-react";
+import { CheckCircle2, Pencil, Trash2 } from "lucide-react";
 import StatusBadge from "@/components/StatusBadge";
 import ConfirmDeleteModal from "./ConfirmDeleteModal";
 import { formatDate, formatPrice } from "@/lib/utils";
@@ -12,12 +12,15 @@ import type { Property } from "@/lib/types";
 export default function AdminTable({
   properties,
   onDeleted,
+  onUpdated,
 }: {
   properties: Property[];
   onDeleted: (id: string) => void;
+  onUpdated?: (property: Property) => void;
 }) {
   const [pendingDelete, setPendingDelete] = useState<Property | null>(null);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [approvingId, setApprovingId] = useState<string | null>(null);
 
   async function handleConfirmDelete() {
     if (!pendingDelete) return;
@@ -29,6 +32,20 @@ export default function AdminTable({
     if (res.ok) {
       onDeleted(pendingDelete.id);
       setPendingDelete(null);
+    }
+  }
+
+  async function handleApprove(property: Property) {
+    setApprovingId(property.id);
+    const res = await fetch(`/api/properties/${property.id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ published: true }),
+    });
+    setApprovingId(null);
+    if (res.ok) {
+      const updated = await res.json();
+      onUpdated?.(updated);
     }
   }
 
@@ -74,7 +91,14 @@ export default function AdminTable({
                   </div>
                 </td>
                 <td className="px-5 py-3">
-                  <StatusBadge status={property.status} />
+                  <div className="flex flex-wrap items-center gap-2">
+                    <StatusBadge status={property.status} />
+                    {!property.published && (
+                      <span className="inline-flex items-center rounded-lg bg-amber-100 px-2.5 py-1 text-xs font-semibold text-amber-700">
+                        Pending Approval
+                      </span>
+                    )}
+                  </div>
                 </td>
                 <td className="px-5 py-3 font-medium text-slate-700">
                   {formatPrice(property.price, property.status)}
@@ -84,6 +108,16 @@ export default function AdminTable({
                 </td>
                 <td className="px-5 py-3">
                   <div className="flex items-center justify-end gap-2">
+                    {!property.published && (
+                      <button
+                        onClick={() => handleApprove(property)}
+                        disabled={approvingId === property.id}
+                        className="flex h-9 items-center gap-1.5 rounded-lg border border-green-200 px-3 text-xs font-semibold text-green-700 hover:bg-green-50 disabled:opacity-50"
+                      >
+                        <CheckCircle2 className="h-4 w-4" />
+                        {approvingId === property.id ? "Approving..." : "Approve"}
+                      </button>
+                    )}
                     <Link
                       href={`/admin/properties/${property.id}/edit`}
                       className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-slate-600 hover:border-brand-blue hover:text-brand-blue"

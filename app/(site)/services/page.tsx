@@ -19,37 +19,37 @@ const services = [
     icon: TrendingUp,
     title: "Property Valuation",
     description:
-      "Independent valuations for mortgage, insurance, litigation, taxation and investment purposes, delivered to IVS and NIESV/ESVARBON professional standards.",
+      "We tell you what your property is really worth. Whether it's for a bank loan, insurance, a court matter, tax, or an investment decision, our valuations are accurate, independent, and carried out to recognised professional standards.",
   },
   {
     icon: Building2,
     title: "Property & Estate Management",
     description:
-      "Full-service management of residential, commercial and mixed-use assets — tenancy administration, rent collection, maintenance oversight and reporting.",
+      "Own a property but don't have the time to run it day-to-day? We manage it for you — finding and handling tenants, collecting rent, keeping up with repairs, and keeping you updated — so you can enjoy the returns without the stress.",
   },
   {
     icon: Key,
     title: "Letting & Agency",
     description:
-      "Sales and letting brokerage across Enugu State, connecting verified property with qualified buyers and tenants.",
+      "Looking to buy, sell, or rent a property in Enugu State? We connect you with the right buyers, tenants, or homes. Every property and every client is properly checked first, so you can go ahead with confidence.",
   },
   {
     icon: Map,
     title: "Land & Estate Development",
     description:
-      "Feasibility studies, layout planning and advisory support for land development and estate schemes from acquisition to delivery.",
+      "Planning to develop land or build an estate? We guide you through the whole journey — checking if the project makes good sense, planning the layout, and seeing it through from start to finish.",
   },
   {
     icon: FileCheck2,
     title: "Professional Documentation",
     description:
-      "Certificate of Occupancy processing, deed registration and title perfection support in line with the Land Use Act 1978 and Enugu State lands administration.",
+      "Property paperwork can be confusing. We help you obtain your Certificate of Occupancy, register your deed, and properly perfect your title — done the right way, and fully in line with the law.",
   },
   {
     icon: Lightbulb,
     title: "Real Estate Advisory",
     description:
-      "Strategic advice to institutions, banks, corporations and governments on property and investment decisions.",
+      "Making a big property or investment decision? Banks, companies, and government bodies trust us for clear, practical advice that helps them decide with confidence.",
   },
 ];
 

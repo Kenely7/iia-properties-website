@@ -14,6 +14,11 @@ const navLinks = [
     children: [
       { label: "For Sale", href: "/properties?status=for-sale" },
       { label: "For Rent", href: "/properties?status=for-rent" },
+      { label: "Joint Venture", href: "/properties?status=joint-venture" },
+      {
+        label: "Full Closure (Private Treaty)",
+        href: "/properties?status=private-treaty",
+      },
       { label: "All Listings", href: "/properties" },
     ],
   },
@@ -53,7 +58,7 @@ export default function Navbar() {
                   <ChevronDown className="h-4 w-4" />
                 </Link>
                 {dropdownOpen && (
-                  <div className="absolute left-0 top-full w-44 rounded-xl bg-white p-2 shadow-lg ring-1 ring-slate-100">
+                  <div className="absolute left-0 top-full w-56 rounded-xl bg-white p-2 shadow-lg ring-1 ring-slate-100">
                     {link.children.map((child) => (
                       <Link
                         key={child.label}

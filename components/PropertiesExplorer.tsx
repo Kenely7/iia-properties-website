@@ -9,6 +9,16 @@ import type { Property, PropertyStatus } from "@/lib/types";
 type StatusFilter = PropertyStatus | "all";
 type SortOption = "newest" | "price-asc" | "price-desc";
 
+const statusLabels: Record<StatusFilter, string> = {
+  all: "All Listings",
+  "for-sale": "For Sale",
+  "for-rent": "For Rent",
+  "joint-venture": "Joint Venture",
+  "private-treaty": "Full Closure (Private Treaty)",
+  sold: "Sold",
+  rented: "Rented",
+};
+
 const propertyTypes = [
   "Duplex",
   "Bungalow",
@@ -111,7 +121,15 @@ export default function PropertiesExplorer({
           <div>
             <h4 className="font-heading font-bold text-slate-900">Status</h4>
             <div className="mt-3 space-y-2">
-              {(["all", "for-sale", "for-rent"] as StatusFilter[]).map((option) => (
+              {(
+                [
+                  "all",
+                  "for-sale",
+                  "for-rent",
+                  "joint-venture",
+                  "private-treaty",
+                ] as StatusFilter[]
+              ).map((option) => (
                 <label
                   key={option}
                   className="flex cursor-pointer items-center gap-2 text-sm text-slate-600"
@@ -126,11 +144,7 @@ export default function PropertiesExplorer({
                     }}
                     className="h-4 w-4 text-brand-blue focus:ring-brand-blue"
                   />
-                  {option === "all"
-                    ? "All Listings"
-                    : option === "for-sale"
-                    ? "For Sale"
-                    : "For Rent"}
+                  {statusLabels[option]}
                 </label>
               ))}
             </div>
@@ -221,8 +235,16 @@ export default function PropertiesExplorer({
 
       {/* Results */}
       <div>
-        <div className="mb-6 flex gap-2 border-b border-slate-200">
-          {(["all", "for-sale", "for-rent"] as StatusFilter[]).map((option) => (
+        <div className="mb-6 flex flex-wrap gap-2 border-b border-slate-200">
+          {(
+            [
+              "all",
+              "for-sale",
+              "for-rent",
+              "joint-venture",
+              "private-treaty",
+            ] as StatusFilter[]
+          ).map((option) => (
             <button
               key={option}
               onClick={() => {
@@ -236,7 +258,7 @@ export default function PropertiesExplorer({
                   : "border-transparent text-slate-500 hover:text-slate-700"
               )}
             >
-              {option === "all" ? "All" : option === "for-sale" ? "For Sale" : "For Rent"}
+              {option === "all" ? "All" : statusLabels[option]}
             </button>
           ))}
         </div>
@@ -326,9 +348,17 @@ function ListRow({ property }: { property: Property }) {
       className="group flex flex-col overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-slate-100 transition-shadow hover:shadow-lg sm:flex-row"
     >
       <div
-        className="h-56 w-full shrink-0 bg-cover bg-center sm:h-auto sm:w-72"
+        className="relative h-56 w-full shrink-0 bg-cover bg-center sm:h-auto sm:w-72"
         style={{ backgroundImage: `url(${property.images[0]})` }}
-      />
+      >
+        {property.status === "sold" && (
+          <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/25">
+            <span className="-rotate-12 border-4 border-white px-6 py-1.5 text-2xl font-black uppercase tracking-widest text-white">
+              Sold
+            </span>
+          </div>
+        )}
+      </div>
       <div className="flex flex-1 flex-col justify-center p-6">
         <p className="font-heading text-xl font-bold text-brand-blue">
           {formatPrice(property.price, property.status)}

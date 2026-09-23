@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter, Sorts_Mill_Goudy } from "next/font/google";
 import "./globals.css";
 
-const playfairDisplay = Playfair_Display({
-  variable: "--font-playfair-display",
+const sortsMillGoudy = Sorts_Mill_Goudy({
+  variable: "--font-sorts-mill-goudy",
   subsets: ["latin"],
-  weight: ["600", "700"],
+  weight: ["400"],
 });
 
 const inter = Inter({
@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${playfairDisplay.variable} ${inter.variable} h-full scroll-smooth`}
+      className={`${sortsMillGoudy.variable} ${inter.variable} h-full scroll-smooth`}
     >
       <body className="min-h-full flex flex-col font-body antialiased bg-white text-slate-800">
         {children}

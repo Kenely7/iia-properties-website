@@ -15,10 +15,19 @@ export default async function PropertiesPage({
   const params = await searchParams;
   const properties = await getAllProperties();
 
-  const initialStatus: PropertyStatus | "all" =
-    params.status === "for-sale" || params.status === "for-rent"
-      ? (params.status as PropertyStatus)
-      : "all";
+  const validStatuses: PropertyStatus[] = [
+    "for-sale",
+    "for-rent",
+    "joint-venture",
+    "private-treaty",
+    "sold",
+    "rented",
+  ];
+  const initialStatus: PropertyStatus | "all" = validStatuses.includes(
+    params.status as PropertyStatus
+  )
+    ? (params.status as PropertyStatus)
+    : "all";
 
   return (
     <Section containerClassName="max-w-7xl">

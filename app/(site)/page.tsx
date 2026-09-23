@@ -13,8 +13,8 @@ import {
 } from "lucide-react";
 import Section, { SectionHeading } from "@/components/Section";
 import SearchBar from "@/components/SearchBar";
-import PropertyCard from "@/components/PropertyCard";
 import Testimonials from "@/components/Testimonials";
+import FeaturedSlideshow from "@/components/FeaturedSlideshow";
 import FadeIn from "@/components/FadeIn";
 import Button from "@/components/Button";
 import { getAllProperties } from "@/lib/properties.server";
@@ -24,37 +24,37 @@ const services = [
     icon: TrendingUp,
     title: "Property Valuation",
     description:
-      "Independent valuations for mortgage, insurance, litigation, taxation and investment purposes, delivered to IVS and NIESV/ESVARBON professional standards.",
+      "We tell you what your property is really worth. Whether it's for a bank loan, insurance, a court matter, tax, or an investment decision, our valuations are accurate, independent, and carried out to recognised professional standards.",
   },
   {
     icon: Building2,
     title: "Property & Estate Management",
     description:
-      "Full-service management of residential, commercial and mixed-use assets — tenancy administration, rent collection, maintenance oversight and reporting.",
+      "Own a property but don't have the time to run it day-to-day? We manage it for you — finding and handling tenants, collecting rent, keeping up with repairs, and keeping you updated — so you can enjoy the returns without the stress.",
   },
   {
     icon: Key,
     title: "Letting & Agency",
     description:
-      "Sales and letting brokerage across Enugu State, connecting verified property with qualified buyers and tenants.",
+      "Looking to buy, sell, or rent a property in Enugu State? We connect you with the right buyers, tenants, or homes. Every property and every client is properly checked first, so you can go ahead with confidence.",
   },
   {
     icon: Map,
     title: "Land & Estate Development",
     description:
-      "Feasibility studies, layout planning and advisory support for land development and estate schemes from acquisition to delivery.",
+      "Planning to develop land or build an estate? We guide you through the whole journey — checking if the project makes good sense, planning the layout, and seeing it through from start to finish.",
   },
   {
     icon: FileCheck2,
     title: "Professional Documentation",
     description:
-      "Certificate of Occupancy processing, deed registration and title perfection support in line with the Land Use Act 1978 and Enugu State lands administration.",
+      "Property paperwork can be confusing. We help you obtain your Certificate of Occupancy, register your deed, and properly perfect your title — done the right way, and fully in line with the law.",
   },
   {
     icon: Lightbulb,
     title: "Real Estate Advisory",
     description:
-      "Strategic advice to institutions, banks, corporations and governments on property and investment decisions.",
+      "Making a big property or investment decision? Banks, companies, and government bodies trust us for clear, practical advice that helps them decide with confidence.",
   },
 ];
 
@@ -108,29 +108,71 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Featured Properties */}
+      {/* Company Summary + Featured Properties Slideshow */}
       <Section>
-        <FadeIn>
-          <SectionHeading
-            eyebrow="Handpicked Listings"
-            title="Featured Properties"
-            description="A curated mix of homes for sale and for rent, updated regularly by our team."
-          />
-        </FadeIn>
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+          <FadeIn>
+            <span className="text-sm font-semibold uppercase tracking-wider text-brand-blue">
+              Who We Are
+            </span>
+            <h2 className="mt-3 font-heading text-3xl font-bold text-slate-900 sm:text-4xl">
+              Iwuba Ifediora &amp; Associates
+            </h2>
 
-        <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {featured.map((property, i) => (
-            <FadeIn key={property.id} delay={i * 0.05}>
-              <PropertyCard property={property} />
-            </FadeIn>
-          ))}
+            <div className="mt-6 space-y-4 text-slate-600">
+              <p>
+                Iwuba Ifediora &amp; Associates (IIA) is a registered firm of
+                Estate Surveyors &amp; Valuers, proudly accredited by NIESV
+                and ESVARBON. Since our founding on the 18th of September
+                2012, we have grown from a dedicated practice in Enugu into a
+                trusted name across the South-East, built entirely on
+                professional expertise, honest dealing, and long-standing
+                relationships with the clients we serve.
+              </p>
+              <p>
+                Our work spans property valuation for mortgage, insurance,
+                litigation, taxation and investment purposes; full-service
+                property and estate management; sales and letting agency;
+                land and estate development advisory; professional
+                documentation including Certificate of Occupancy processing
+                and title perfection; and strategic real estate advisory for
+                institutions, banks, corporations and government bodies.
+                Whatever stage of the property journey you are on, there is a
+                dedicated team behind you at IIA.
+              </p>
+              <p>
+                We operate on a simple doctrine: honesty and devotion in
+                every assignment, and outstanding professional service
+                towards every client&apos;s interest in land and landed
+                property. It is this discipline — technical expertise paired
+                with genuine hands-on experience — that has shaped our
+                reputation, and it is the same standard we bring to every
+                property listed on this site.
+              </p>
+              <p>
+                Looking ahead, our vision is to become Africa&apos;s most
+                trusted and innovative real estate advisory institution — a
+                benchmark for professional excellence and enduring value, not
+                just in Enugu, but across the continent.
+              </p>
+            </div>
+
+            <div className="mt-8">
+              <Button href="/about" variant="secondary" size="lg">
+                Read More About Us
+              </Button>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={0.15}>
+            <FeaturedSlideshow properties={featured} />
+            <div className="mt-6 text-center lg:text-left">
+              <Button href="/properties" size="lg">
+                View All Properties
+              </Button>
+            </div>
+          </FadeIn>
         </div>
-
-        <FadeIn className="mt-12 text-center">
-          <Button href="/properties" size="lg">
-            View All Properties
-          </Button>
-        </FadeIn>
       </Section>
 
       {/* Services Overview */}

@@ -149,12 +149,18 @@ export default function PropertyForm({ initialData }: PropertyFormProps) {
           >
             <option value="for-sale">For Sale</option>
             <option value="for-rent">For Rent</option>
+            <option value="joint-venture">Joint Venture</option>
+            <option value="private-treaty">Full Closure (Private Treaty)</option>
+            <option value="sold">Sold</option>
+            <option value="rented">Rented</option>
           </select>
         </div>
 
         <div>
           <label className={labelClass}>
-            Price (₦) {form.status === "for-rent" && "(per annum)"}
+            Price (₦){" "}
+            {(form.status === "for-rent" || form.status === "rented") &&
+              "(per annum)"}
           </label>
           <input
             type="number"

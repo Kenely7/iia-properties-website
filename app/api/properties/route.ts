@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { addProperty, getAllProperties } from "@/lib/properties.server";
+import { sendNewPropertyNotification } from "@/lib/email.server";
 import type { NewProperty } from "@/lib/types";
 
 export async function GET(request: NextRequest) {
@@ -25,5 +26,6 @@ export async function POST(request: NextRequest) {
   }
 
   const created = await addProperty(body);
+  await sendNewPropertyNotification(created);
   return NextResponse.json(created, { status: 201 });
 }

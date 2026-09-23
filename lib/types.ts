@@ -1,4 +1,10 @@
-export type PropertyStatus = "for-sale" | "for-rent";
+export type PropertyStatus =
+  | "for-sale"
+  | "for-rent"
+  | "joint-venture"
+  | "private-treaty"
+  | "sold"
+  | "rented";
 
 export interface Property {
   id: string;
@@ -15,7 +21,8 @@ export interface Property {
   amenities: string[];
   images: string[];
   featured: boolean;
+  published: boolean;
   dateAdded: string;
 }
 
-export type NewProperty = Omit<Property, "id" | "dateAdded">;
+export type NewProperty = Omit<Property, "id" | "dateAdded" | "published">;

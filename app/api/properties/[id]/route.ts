@@ -4,7 +4,7 @@ import {
   getPropertyById,
   updateProperty,
 } from "@/lib/properties.server";
-import type { NewProperty } from "@/lib/types";
+import type { Property } from "@/lib/types";
 
 export async function GET(
   _request: NextRequest,
@@ -23,7 +23,7 @@ export async function PUT(
   { params }: { params: Promise<{ id: string }> }
 ) {
   const { id } = await params;
-  const body = (await request.json()) as Partial<NewProperty>;
+  const body = (await request.json()) as Partial<Omit<Property, "id" | "dateAdded">>;
   const updated = await updateProperty(id, body);
   if (!updated) {
     return NextResponse.json({ error: "Not found" }, { status: 404 });

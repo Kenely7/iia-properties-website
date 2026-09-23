@@ -23,6 +23,11 @@ const footerLinks = [
     links: [
       { label: "For Sale", href: "/properties?status=for-sale" },
       { label: "For Rent", href: "/properties?status=for-rent" },
+      { label: "Joint Venture", href: "/properties?status=joint-venture" },
+      {
+        label: "Full Closure (Private Treaty)",
+        href: "/properties?status=private-treaty",
+      },
       { label: "All Listings", href: "/properties" },
     ],
   },
@@ -97,7 +102,8 @@ export default function Footer() {
             <ul className="mt-4 space-y-3 text-sm text-slate-400">
               <li className="flex items-start gap-2">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand-blue-light" />
-                Suite 2N Purity Plaza, Abakaliki Road, GRA Enugu, Nigeria
+                Suite 2N, Purity Plaza, 1 Devon Drive, by Abakaliki Road
+                (Opposite Chase Mall), GRA 400283, Enugu, Nigeria
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 shrink-0 text-brand-blue-light" />

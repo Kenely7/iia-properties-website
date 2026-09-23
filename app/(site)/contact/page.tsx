@@ -2,14 +2,15 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import Section, { SectionHeading } from "@/components/Section";
 import FadeIn from "@/components/FadeIn";
 import InquiryForm from "@/components/InquiryForm";
-import { InstagramIcon } from "@/components/icons/SocialIcons";
+import { FacebookIcon, InstagramIcon } from "@/components/icons/SocialIcons";
 
 export const metadata = {
   title: "Contact Us | IIA Properties",
 };
 
 const office = {
-  address: "Suite 2N Purity Plaza, Abakaliki Road, GRA Enugu, Nigeria",
+  address:
+    "Suite 2N, Purity Plaza, 1 Devon Drive, by Abakaliki Road (Opposite Chase Mall), GRA 400283, Enugu, Nigeria",
   phones: ["0811 545 3020", "0915 557 7750"],
   email: "iwuba.ifediora@gmail.com",
 };
@@ -47,6 +48,17 @@ export default function ContactPage() {
                   className="hover:text-brand-blue"
                 >
                   @iiaproperties
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <FacebookIcon className="h-5 w-5 text-brand-blue" />
+                <a
+                  href="https://www.facebook.com/iiaproperties/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-brand-blue"
+                >
+                  IIA Properties
                 </a>
               </li>
             </ul>
