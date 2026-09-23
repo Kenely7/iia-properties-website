@@ -1,5 +1,6 @@
 import "server-only";
 import { neon } from "@neondatabase/serverless";
+import { normalizeImageUrl } from "./utils";
 import type { NewProperty, Property } from "./types";
 
 const sql = neon(process.env.DATABASE_URL!);
@@ -70,6 +71,7 @@ export async function getPropertyById(id: string): Promise<Property | undefined>
 export async function addProperty(data: NewProperty): Promise<Property> {
   const id = `p${Date.now()}`;
   const dateAdded = new Date().toISOString();
+  const images = data.images.map(normalizeImageUrl);
 
   // New listings always start unpublished and wait for approval.
   const rows = (await sql`
@@ -79,7 +81,7 @@ export async function addProperty(data: NewProperty): Promise<Property> {
     ) VALUES (
       ${id}, ${data.title}, ${data.description}, ${data.status}, ${data.price},
       ${data.address}, ${data.city}, ${data.state}, ${data.propertyType},
-      ${data.beds}, ${data.baths}, ${data.amenities}, ${data.images},
+      ${data.beds}, ${data.baths}, ${data.amenities}, ${images},
       ${data.featured}, false, ${dateAdded}
     )
     RETURNING *
@@ -96,6 +98,9 @@ export async function updateProperty(
   if (!existing) return undefined;
 
   const merged: Omit<Property, "id" | "dateAdded"> = { ...existing, ...data };
+  if (data.images) {
+    merged.images = data.images.map(normalizeImageUrl);
+  }
 
   const rows = (await sql`
     UPDATE properties SET

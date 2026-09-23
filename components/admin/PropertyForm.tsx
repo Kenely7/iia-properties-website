@@ -275,6 +275,12 @@ export default function PropertyForm({ initialData }: PropertyFormProps) {
             onChange={(e) => update("images", e.target.value)}
             placeholder="https://images.unsplash.com/..."
           />
+          <p className="mt-1.5 text-xs text-slate-500">
+            Google Drive share links (from Share → Copy link) are supported
+            and converted automatically — just make sure each file is set
+            to &quot;Anyone with the link can view&quot; in Drive, or it
+            won&apos;t load on the site.
+          </p>
         </div>
       </section>
 
