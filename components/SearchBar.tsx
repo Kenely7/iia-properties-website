@@ -5,6 +5,15 @@ import { useState } from "react";
 import { Search } from "lucide-react";
 import { cn } from "@/lib/utils";
 
+const statusOptions = [
+  { value: "for-sale", label: "For Sale" },
+  { value: "for-rent", label: "For Rent" },
+  { value: "joint-venture", label: "Joint Venture" },
+  { value: "private-treaty", label: "Private Treaty" },
+] as const;
+
+type SearchStatus = (typeof statusOptions)[number]["value"];
+
 const propertyTypes = [
   "Any Type",
   "Duplex",
@@ -27,7 +36,7 @@ const priceRanges = [
 
 export default function SearchBar({ className }: { className?: string }) {
   const router = useRouter();
-  const [status, setStatus] = useState<"for-sale" | "for-rent">("for-sale");
+  const [status, setStatus] = useState<SearchStatus>("for-sale");
   const [location, setLocation] = useState("");
   const [propertyType, setPropertyType] = useState(propertyTypes[0]);
   const [priceRange, setPriceRange] = useState("");
@@ -50,20 +59,20 @@ export default function SearchBar({ className }: { className?: string }) {
         className
       )}
     >
-      <div className="mb-4 flex gap-2">
-        {(["for-sale", "for-rent"] as const).map((option) => (
+      <div className="mb-4 flex flex-wrap gap-2">
+        {statusOptions.map((option) => (
           <button
-            key={option}
+            key={option.value}
             type="button"
-            onClick={() => setStatus(option)}
+            onClick={() => setStatus(option.value)}
             className={cn(
               "rounded-lg px-5 py-2 text-sm font-semibold transition-colors",
-              status === option
+              status === option.value
                 ? "bg-brand-blue text-white"
                 : "bg-brand-gray text-slate-600 hover:bg-slate-200"
             )}
           >
-            {option === "for-sale" ? "For Sale" : "For Rent"}
+            {option.label}
           </button>
         ))}
       </div>

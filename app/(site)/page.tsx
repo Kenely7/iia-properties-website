@@ -87,13 +87,16 @@ export default async function HomePage() {
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=60')] bg-cover bg-center opacity-20" />
         <div className="relative mx-auto max-w-7xl px-4 pb-20 pt-20 sm:px-6 sm:pb-28 sm:pt-28 lg:px-8">
           <FadeIn className="mx-auto max-w-3xl text-center">
-            <h1 className="font-heading text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
-              Welcome to IIA Properties
+            <span className="text-sm font-semibold uppercase tracking-[0.2em] text-white/70">
+              Iwuba Ifediora &amp; Associates
+            </span>
+            <h1 className="mt-3 font-heading text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
+              Property Solutions You Can Trust
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-white/80">
-              Iwuba Ifediora & Associates is fully committed to helping you
-              find and secure the best real estate deals to meet your need.
-              No need to sweat — let us help you today.
+              A registered firm of Estate Surveyors &amp; Valuers, helping you
+              buy, sell, rent and invest in property across Enugu State with
+              confidence — backed by over a decade of professional integrity.
             </p>
             <div className="mt-8 flex justify-center">
               <Button href="/services#service-inquiry" variant="outline" size="lg">
