@@ -94,13 +94,17 @@ export default async function HomePage() {
               Property Solutions You Can Trust
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-white/80">
-              A registered firm of Estate Surveyors &amp; Valuers, helping you
-              buy, sell, rent and invest in property across Enugu State with
-              confidence — backed by over a decade of professional integrity.
+              Iwuba Ifediora &amp; Associates (IIA) is a registered firm of
+              Estate Surveyors &amp; Valuers, proudly accredited by NIESV and
+              ESVARBON. For over a decade, we have helped individuals,
+              businesses and institutions buy, sell, rent, value and manage
+              property across Enugu State and beyond — guided always by
+              honesty, professionalism, and a genuine commitment to every
+              client&apos;s interest in land and landed property.
             </p>
             <div className="mt-8 flex justify-center">
-              <Button href="/services#service-inquiry" variant="outline" size="lg">
-                Request a Valuation
+              <Button href="/about" variant="outline" size="lg">
+                Read More
               </Button>
             </div>
           </FadeIn>
