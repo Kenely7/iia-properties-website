@@ -107,7 +107,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 shrink-0 text-brand-blue-light" />
-                0811 545 3020 / 0915 557 7750
+                0811 545 3020
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 shrink-0 text-brand-blue-light" />

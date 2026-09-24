@@ -11,7 +11,7 @@ export const metadata = {
 const office = {
   address:
     "Suite 2N, Purity Plaza, 1 Devon Drive, by Abakaliki Road (Opposite Chase Mall), GRA 400283, Enugu, Nigeria",
-  phones: ["0811 545 3020", "0915 557 7750"],
+  phones: ["0811 545 3020"],
   email: "iwuba.ifediora@gmail.com",
 };
 
