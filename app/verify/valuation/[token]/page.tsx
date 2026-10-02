@@ -26,6 +26,9 @@ export default async function VerifyValuationPage({
           ? [
               { label: "Report Number", value: report.reportNumber },
               { label: "Client Name", value: report.clientName },
+              ...(report.valuationDate
+                ? [{ label: "Valuation Date", value: report.valuationDate }]
+                : []),
               { label: "Issue Date", value: report.issueDate },
               { label: "Status", value: report.status },
             ]

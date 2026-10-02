@@ -10,6 +10,7 @@ export interface ValuationReport {
   token: string;
   reportNumber: string;
   clientName: string;
+  valuationDate?: string;
   issueDate: string;
   status: string;
   driveLink: string;
