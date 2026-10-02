@@ -10,6 +10,7 @@ export interface ValuationReport {
   token: string;
   reportNumber: string;
   clientName: string;
+  mortgagor?: string;
   valuationDate?: string;
   issueDate: string;
   status: string;

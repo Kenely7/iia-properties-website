@@ -13,6 +13,10 @@ export default async function VerifyValuationPage({
   const { token } = await params;
   const report = await getValuationReport(token);
   const valid = Boolean(report && report.status?.toLowerCase() === "valid");
+  const isBankValuation = Boolean(
+    report?.clientName?.trim().toLowerCase().startsWith("credit risk")
+  );
+  const mortgagor = report?.mortgagor?.trim();
 
   return (
     <VerifyCard
@@ -26,6 +30,9 @@ export default async function VerifyValuationPage({
           ? [
               { label: "Report Number", value: report.reportNumber },
               { label: "Client Name", value: report.clientName },
+              ...(isBankValuation && mortgagor
+                ? [{ label: "Mortgagor", value: mortgagor }]
+                : []),
               ...(report.valuationDate
                 ? [{ label: "Valuation Date", value: report.valuationDate }]
                 : []),
