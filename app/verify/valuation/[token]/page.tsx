@@ -13,9 +13,8 @@ export default async function VerifyValuationPage({
   const { token } = await params;
   const report = await getValuationReport(token);
   const valid = Boolean(report && report.status?.toLowerCase() === "valid");
-  const isBankValuation = Boolean(
-    report?.clientName?.trim().toLowerCase().startsWith("credit risk")
-  );
+  const isBankValuation =
+    report?.valuationType?.trim().toLowerCase() === "bank";
   const mortgagor = report?.mortgagor?.trim();
 
   return (
